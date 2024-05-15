@@ -17,15 +17,6 @@ import { Request, Response } from 'express';
 import { UserDto } from 'src/users/dtos/CreateUser.dto';
 import { UsersService } from 'src/users/services/users/users.service';
 
-
-const users2: UserDto[] = [
-    { name: "Marto", email: "Marto@abv.bg", id: 1 },
-    { name: "Gosho", email: "Gosho@abv.bg", id: 2 },
-    { name: "Ivan", email: "Ivan@abv.bg", id: 3 },
-    { name: "Pesho", email: "Pesho@abv.bg", id: 4 },
-    { name: "Hristo", email: "Hristo@abv.bg", id: 5 },
-]
-
 @Controller('users')
 export class UsersController {
     constructor(private userService: UsersService) { };
