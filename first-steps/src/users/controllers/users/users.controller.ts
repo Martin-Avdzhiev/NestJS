@@ -1,22 +1,24 @@
-import { 
-    Controller, 
-    Get, 
-    Post, 
+import {
+    Controller,
+    Get,
+    Post,
     Put,
-    Delete, 
-    Body, 
-    Param, 
-    Query, 
-    Req, 
-    Res, 
-    UsePipes, 
+    Delete,
+    Body,
+    Param,
+    Query,
+    Req,
+    Res,
+    UsePipes,
     ValidationPipe,
     ParseIntPipe,
- } from '@nestjs/common';
+} from '@nestjs/common';
 import { Request, Response } from 'express';
 import { UserDto } from 'src/users/dtos/CreateUser.dto';
+import { UsersService } from 'src/users/services/users/users.service';
 
-const users: UserDto[] = [
+
+const users2: UserDto[] = [
     { name: "Marto", email: "Marto@abv.bg", id: 1 },
     { name: "Gosho", email: "Gosho@abv.bg", id: 2 },
     { name: "Ivan", email: "Ivan@abv.bg", id: 3 },
@@ -26,60 +28,43 @@ const users: UserDto[] = [
 
 @Controller('users')
 export class UsersController {
-
+    constructor(private userService: UsersService) { };
     @Get()
     getUsers(@Query("sortBy") sortBy: string, @Query("limit") limit: number) {
-        if (sortBy == "asc") {
-            return users.slice().sort((a, b) => a.name.localeCompare(b.name)).slice(0, limit || users.length);
-        }
-        else if (sortBy == "dsc") {
-            return users.slice().sort((a, b) => b.name.localeCompare(a.name)).slice(0, limit || users.length);
-        }
-        return users.slice(0, limit || users.length);
+        const fetchedUsers = this.userService.fetchUsers(sortBy, limit);
+        return fetchedUsers;
     }
 
-    @Get("posts")
-    getUsersPosts() {
-        return [{
-            username: "asd",
-            email: "asd@abv.bg",
-            posts: [1, 2, 3]
-        }];
-    }
-    @Get(":id/:postId")
-    getUserById(@Param("id", ParseIntPipe) id: number, @Param("postId") postId: string, @Res() response: Response) {
-        return response.send({ username: "Marto", id, postId });
+    @Get(":id")
+    getUserById(@Param("id", ParseIntPipe) id: number, @Res() response: Response) {
+        const user: UserDto | string = this.userService.fetchUserById(id);
+        if (typeof user == "string") {
+            return response.status(404).send({ message: user })
+        }
+        return response.send(user);
     }
 
     @Post("/create")
-    createUser(@Req() request: Request, @Res() response: Response) {
-        console.log(request.body);
-        return response.send("Created")
-    }
-    @Post("/createbody")
     @UsePipes(new ValidationPipe())
-    createUserBody(@Body() userData: UserDto) {
-        console.log(userData);
-        return {}
+    createUser(@Body() data:UserDto, @Res() response: Response) {
+        const newUser = this.userService.createUser(data);
+        return response.send(newUser);
     }
     @Put("edit/:id")
     @UsePipes(new ValidationPipe())
-    editUser(@Param("id", ParseIntPipe) id : number, @Body() userData:UserDto, @Res() response: Response){
-        const userIndex:number = users.findIndex((x) => x.id == id);
-        if(userIndex == -1){
-            return  response.status(404).send({message:"User is not found!"});
+    editUser(@Param("id", ParseIntPipe) id: number, @Body() userData: UserDto, @Res() response: Response) {
+        const user:UserDto|string = this.userService.editUser(id,userData);
+        if (typeof user == "string") {
+            return response.status(404).send({ message: user })
         }
-        users.splice(userIndex,1,userData);
-        return response.status(200).send(users[userIndex]);
+        return response.send(user);
     }
     @Delete("delete/:id")
-    deleteUser(@Param("id",ParseIntPipe) id: number, @Res() response: Response){
-        const userIndex:number = users.findIndex((x) => x.id == id);
-        if(userIndex == -1){
-          return  response.status(404).send({message:"User is not found!"});
+    deleteUser(@Param("id", ParseIntPipe) id: number, @Res() response: Response) {
+        const user:UserDto|string = this.userService.deleteUser(id);
+        if (typeof user == "string") {
+            return response.status(404).send({ message: "User is not found!" });
         }
-        const user = users[userIndex];
-        users.splice(userIndex,1);
         return response.status(200).send(user);
     }
 }
