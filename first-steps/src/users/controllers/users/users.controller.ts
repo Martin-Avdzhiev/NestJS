@@ -1,13 +1,27 @@
-import { Body, Controller, Get, Param, Post, Query, Req, Res } from '@nestjs/common';
+import { 
+    Controller, 
+    Get, 
+    Post, 
+    Put,
+    Delete, 
+    Body, 
+    Param, 
+    Query, 
+    Req, 
+    Res, 
+    UsePipes, 
+    ValidationPipe,
+    ParseIntPipe,
+ } from '@nestjs/common';
 import { Request, Response } from 'express';
-import { CreateUserDto } from 'src/users/dtos/CreateUser.dto';
+import { UserDto } from 'src/users/dtos/CreateUser.dto';
 
-const users = [
-    { name: "Marto", id: 1 },
-    { name: "Gosho", id: 2 },
-    { name: "Ivan", id: 3 },
-    { name: "Pesho", id: 4 },
-    { name: "Hristo", id: 5 },
+const users: UserDto[] = [
+    { name: "Marto", email: "Marto@abv.bg", id: 1 },
+    { name: "Gosho", email: "Gosho@abv.bg", id: 2 },
+    { name: "Ivan", email: "Ivan@abv.bg", id: 3 },
+    { name: "Pesho", email: "Pesho@abv.bg", id: 4 },
+    { name: "Hristo", email: "Hristo@abv.bg", id: 5 },
 ]
 
 @Controller('users')
@@ -32,6 +46,10 @@ export class UsersController {
             posts: [1, 2, 3]
         }];
     }
+    @Get(":id/:postId")
+    getUserById(@Param("id", ParseIntPipe) id: number, @Param("postId") postId: string, @Res() response: Response) {
+        return response.send({ username: "Marto", id, postId });
+    }
 
     @Post("/create")
     createUser(@Req() request: Request, @Res() response: Response) {
@@ -39,13 +57,29 @@ export class UsersController {
         return response.send("Created")
     }
     @Post("/createbody")
-    createUserBody(@Body() userData: CreateUserDto) {
+    @UsePipes(new ValidationPipe())
+    createUserBody(@Body() userData: UserDto) {
         console.log(userData);
         return {}
     }
-    @Get(":id/:postId")
-    getUserById(@Param() id: string, @Param() postId: string, @Res() response: Response) {
-        return response.send({ username: "Marto", id });
+    @Put("edit/:id")
+    @UsePipes(new ValidationPipe())
+    editUser(@Param("id", ParseIntPipe) id : number, @Body() userData:UserDto, @Res() response: Response){
+        const userIndex:number = users.findIndex((x) => x.id == id);
+        if(userIndex == -1){
+            return  response.status(404).send({message:"User is not found!"});
+        }
+        users.splice(userIndex,1,userData);
+        return response.status(200).send(users[userIndex]);
     }
-
+    @Delete("delete/:id")
+    deleteUser(@Param("id",ParseIntPipe) id: number, @Res() response: Response){
+        const userIndex:number = users.findIndex((x) => x.id == id);
+        if(userIndex == -1){
+          return  response.status(404).send({message:"User is not found!"});
+        }
+        const user = users[userIndex];
+        users.splice(userIndex,1);
+        return response.status(200).send(user);
+    }
 }
