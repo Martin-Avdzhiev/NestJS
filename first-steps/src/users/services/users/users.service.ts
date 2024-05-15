@@ -5,13 +5,13 @@ import { UserDto } from 'src/users/dtos/CreateUser.dto';
 @Injectable()
 export class UsersService {
     private users: UserDto[] = [
-        { name: "Marto", email: "Marto@abv.bg", id: 1 },
-        { name: "Gosho", email: "Gosho@abv.bg", id: 2 },
-        { name: "Ivan", email: "Ivan@abv.bg", id: 3 },
-        { name: "Pesho", email: "Pesho@abv.bg", id: 4 },
-        { name: "Hristo", email: "Hristo@abv.bg", id: 5 },
+        { name: "Marto", email: "Marto@gmail.com", id: 1 },
+        { name: "Gosho", email: "Gosho@gmail.com", id: 2 },
+        { name: "Ivan", email: "Ivan@gmail.com", id: 3 },
+        { name: "Pesho", email: "Pesho@gmail.com", id: 4 },
+        { name: "Hristo", email: "Hristo@gmail.com", id: 5 },
     ]
-    fetchUsers(sortBy: string, limit: number) {
+    fetchUsers(sortBy: string | undefined, limit: number | undefined) {
         if (sortBy == "asc") {
             return this.users.slice().sort((a, b) => a.name.localeCompare(b.name)).slice(0, limit || this.users.length);
         }
@@ -47,7 +47,6 @@ export class UsersService {
             return "User is not found!";
         }
         const user: UserDto = this.users.splice(userIndex, 1)[0];
-        console.log(this.users);
         return user;
     }
 }
