@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Post, UsePipes, ValidationPipe } from "@nestjs/common";
+import { Body, Controller, Get, Param, Post, UsePipes, ValidationPipe } from "@nestjs/common";
 import { NewsService } from "./news.service";
 import { CreateNewDto } from "./dtos/New.dto";
 
@@ -16,6 +16,16 @@ export class NewsController {
         }
     }
 
+    @Get("/:id")
+    async getNewById(@Param("id") id:string){
+        try {
+            const oneNew = await this.newsService.getNewById(id);
+            return oneNew;
+        } catch (error) {
+            return this.newsService.catchError(error);
+        }
+    }
+
     @Post("/create")
     @UsePipes(new ValidationPipe())
     async createNew(@Body() createNewsDto: CreateNewDto) {
@@ -26,6 +36,4 @@ export class NewsController {
             return this.newsService.catchError(error);
         }
     }
-
-
 }

@@ -13,6 +13,10 @@ export class NewsService {
         return news;
     }
 
+    getNewById(id:string){
+        const oneNew = this.newModel.findById(id);
+        return oneNew;
+    }
     createNew(createNewDto: CreateNewDto) {
         const createdNew = new this.newModel(createNewDto).save();
         return createdNew;
@@ -20,9 +24,9 @@ export class NewsService {
 
     catchError(error){
         if (error instanceof MongooseError) {
-            return error.message
+            return error.message;
         } else {
-            return error
+            return error;
         }
     }
 }
