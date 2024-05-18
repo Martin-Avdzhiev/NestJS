@@ -49,7 +49,6 @@ export class NewsController {
         }
     }
     @Delete("/delete/:id")
-    @UsePipes(new ValidationPipe())
     async deleteNew(@Param("id") id: string) {
         try {
             const deletedNew = await this.newsService.deleteNew(id);
