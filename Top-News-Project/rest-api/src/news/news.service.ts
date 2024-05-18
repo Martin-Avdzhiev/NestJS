@@ -8,12 +8,12 @@ import { CreateNewDto } from "./dtos/New.dto";
 export class NewsService {
     constructor(@InjectModel(New.name) private newModel: Model<New>) { }
 
-    getNews(){
+    getNews() {
         const news = this.newModel.find();
         return news;
     }
 
-    getNewById(id:string){
+    getNewById(id: string) {
         const oneNew = this.newModel.findById(id);
         return oneNew;
     }
@@ -22,10 +22,18 @@ export class NewsService {
         return createdNew;
     }
 
-    catchError(error){
+    catchError(error) {
         if (error instanceof MongooseError) {
             return error.message;
-        } else {
+        }
+        else if (error?.constructor?.name == "MongoServerError") {
+            if (error.errorResponse.code == 11000) {
+                const key = Object.keys(error.errorResponse.keyPattern)[0];
+                return `Duplicate error: ${key}`
+            }
+            return error.errorResponse.errmsg;
+        }
+        else {
             return error;
         }
     }

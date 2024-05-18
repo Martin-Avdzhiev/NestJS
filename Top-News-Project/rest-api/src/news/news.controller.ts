@@ -6,8 +6,9 @@ import { CreateNewDto } from "./dtos/New.dto";
 export class NewsController {
     constructor(private newsService: NewsService) { }
 
+
     @Get("/")
-    async getNews(){
+    async getNews() {
         try {
             const news = await this.newsService.getNews();
             return news;
@@ -17,7 +18,7 @@ export class NewsController {
     }
 
     @Get("/:id")
-    async getNewById(@Param("id") id:string){
+    async getNewById(@Param("id") id: string) {
         try {
             const oneNew = await this.newsService.getNewById(id);
             return oneNew;
