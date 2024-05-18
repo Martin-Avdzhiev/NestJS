@@ -1,8 +1,8 @@
-import { Injectable } from "@nestjs/common";
+import { HttpException, Injectable } from "@nestjs/common";
 import { InjectModel } from "@nestjs/mongoose";
 import { Model, MongooseError } from "mongoose";
 import { New } from "src/models/New";
-import { CreateNewDto } from "./dtos/New.dto";
+import { NewDto } from "./dtos/New.dto";
 
 @Injectable()
 export class NewsService {
@@ -15,11 +15,18 @@ export class NewsService {
 
     getNewById(id: string) {
         const oneNew = this.newModel.findById(id);
+        if (!oneNew) { throw new HttpException("New is not found", 404) };
         return oneNew;
     }
-    createNew(createNewDto: CreateNewDto) {
-        const createdNew = new this.newModel(createNewDto).save();
+    createNew(NewDto: NewDto) {
+        const createdNew = new this.newModel(NewDto).save();
         return createdNew;
+    }
+
+    async editNew(id: string, data: NewDto) {
+        const editedNew = (await this.newModel.findByIdAndUpdate(id, data, { returnDocument: "after" })).save();
+        if (!editedNew) { throw new HttpException("New is not found", 404) };
+        return editedNew;
     }
 
     catchError(error) {

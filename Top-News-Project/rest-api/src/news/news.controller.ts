@@ -1,6 +1,6 @@
-import { Body, Controller, Get, Param, Post, UsePipes, ValidationPipe } from "@nestjs/common";
+import { Body, Controller, Get, Param, Post, Put, UsePipes, ValidationPipe } from "@nestjs/common";
 import { NewsService } from "./news.service";
-import { CreateNewDto } from "./dtos/New.dto";
+import { NewDto } from "./dtos/New.dto";
 
 @Controller("news")
 export class NewsController {
@@ -29,10 +29,21 @@ export class NewsController {
 
     @Post("/create")
     @UsePipes(new ValidationPipe())
-    async createNew(@Body() createNewsDto: CreateNewDto) {
+    async createNew(@Body() NewDto: NewDto) {
         try {
-            const newNew = await this.newsService.createNew(createNewsDto);
+            const newNew = await this.newsService.createNew(NewDto);
             return `You created ${newNew.title}`;
+        } catch (error) {
+            return this.newsService.catchError(error);
+        }
+    }
+
+    @Put("/edit/:id")
+    @UsePipes(new ValidationPipe())
+    async editNew(@Body() data: NewDto, @Param("id") id: string) {
+        try {
+            const editedNew = await this.newsService.editNew(id, data);
+            return `You updated ${editedNew.title}`;
         } catch (error) {
             return this.newsService.catchError(error);
         }
