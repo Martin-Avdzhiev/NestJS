@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Param, Post, Put, UsePipes, ValidationPipe } from "@nestjs/common";
+import { Body, Controller, Delete, Get, Param, Post, Put, UsePipes, ValidationPipe } from "@nestjs/common";
 import { NewsService } from "./news.service";
 import { NewDto } from "./dtos/New.dto";
 
@@ -44,6 +44,16 @@ export class NewsController {
         try {
             const editedNew = await this.newsService.editNew(id, data);
             return `You updated ${editedNew.title}`;
+        } catch (error) {
+            return this.newsService.catchError(error);
+        }
+    }
+    @Delete("/delete/:id")
+    @UsePipes(new ValidationPipe())
+    async deleteNew(@Param("id") id: string) {
+        try {
+            const deletedNew = await this.newsService.deleteNew(id);
+            return `You deleted ${deletedNew.title}`;
         } catch (error) {
             return this.newsService.catchError(error);
         }

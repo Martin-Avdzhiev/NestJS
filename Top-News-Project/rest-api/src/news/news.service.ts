@@ -28,6 +28,11 @@ export class NewsService {
         if (!editedNew) { throw new HttpException("New is not found", 404) };
         return editedNew;
     }
+    async deleteNew(id: string) {
+        const deletedNew = await this.newModel.findByIdAndDelete(id);
+        if (!deletedNew) { throw new HttpException("New is not found", 404) };
+        return deletedNew;
+    }
 
     catchError(error) {
         if (error instanceof MongooseError) {
