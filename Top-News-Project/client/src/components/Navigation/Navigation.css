@@ -1,0 +1,19 @@
+.main-navigation-div{
+    display: flex;
+    justify-content: space-evenly;
+    background-color: rgb(218 70 58);
+    padding: 1em 0;
+}
+
+.main-navigation-div ul {
+    display: flex;
+    list-style: none;
+    gap: 1em;
+    align-items: center;
+}
+
+.main-navigation-div .socials{
+    display: flex;
+    gap: 1em;
+    align-items: center;
+}
