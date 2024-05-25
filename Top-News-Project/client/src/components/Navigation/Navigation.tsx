@@ -14,7 +14,11 @@ export default function Navigation() {
                     </ul>
                 </div>
                 <div className="socials">
-                        < FontAwesomeIcon icon={['fab', 'facebook']} />
+                    <FontAwesomeIcon icon={['fab', 'facebook-f']} />
+                    <FontAwesomeIcon icon={['fab', 'twitter']} />
+                    <FontAwesomeIcon icon={['fab', 'google-plus-g']} />
+                    <FontAwesomeIcon icon={['fab', 'instagram']} />
+                    <FontAwesomeIcon icon={['fab', 'vk']} />
                 </div>
             </div>
 

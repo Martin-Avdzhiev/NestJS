@@ -1,8 +1,11 @@
 .main-navigation-div{
     display: flex;
     justify-content: space-evenly;
-    background-color: rgb(218 70 58);
+    background-color: rgb(192, 66, 54);
     padding: 1em 0;
+    color:white;
+    font-size: 16px;
+    gap: 30em;
 }
 
 .main-navigation-div ul {
@@ -14,6 +17,6 @@
 
 .main-navigation-div .socials{
     display: flex;
-    gap: 1em;
+    gap: 2em;
     align-items: center;
 }
