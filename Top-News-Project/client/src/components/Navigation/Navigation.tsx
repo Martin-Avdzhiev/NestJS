@@ -21,6 +21,9 @@ export default function Navigation() {
                     <FontAwesomeIcon icon={['fab', 'vk']} />
                 </div>
             </div>
+            <div className="main-image">
+                <img src="./voice_logo.png" alt="voice-logo" />
+            </div>
 
         </>
     )

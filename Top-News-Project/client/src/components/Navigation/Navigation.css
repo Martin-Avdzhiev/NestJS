@@ -20,3 +20,11 @@
     gap: 2em;
     align-items: center;
 }
+.main-image{
+    width: 10%;
+}
+.main-image img{
+    width: 100%;
+    height: auto;
+    margin: 3em 0 3em 18.5em;
+}
