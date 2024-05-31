@@ -1,0 +1,55 @@
+.main-second-navigation-div{
+    background-color: rgb(252,252,252);
+    border-top: 2px solid rgb(235,235,235);
+    border-bottom: 2px solid rgb(235,235,235);
+}
+
+.navigation-buttons{
+    display: flex;
+    justify-content: space-between;
+}
+.navigation-buttons .second-navigation-ul{
+    display: flex;
+    list-style-type: none;
+    margin-left: 18.5em;
+}
+
+.navigation-buttons .second-navigation-ul>li{
+    padding: 0.5em 1em;
+    font-weight: 500;
+    border-left: 1px solid rgb(235,235,235);
+    border-right: 1px solid rgb(235,235,235);
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.navigation-buttons .second-navigation-ul>li:nth-child(1){
+    border-left: 2px solid rgb(235,235,235);
+}
+.navigation-buttons .second-navigation-ul>li:nth-child(8){
+
+    border-right: 2px solid rgb(235,235,235);
+}
+.navigation-buttons .second-navigation-ul>li:hover{
+    color:rgb(218,70,58);
+    background-color: white;
+}
+.navigation-buttons .second-navigation-ul li>svg{
+    font-size: 12px;
+}
+
+.navigation-buttons .search-button{
+    margin-right: 22em;
+    display: flex;
+    align-items: center;
+    border-left: 2px solid rgb(235,235,235);
+    border-right: 2px solid rgb(235,235,235);
+}
+.navigation-buttons .search-button svg{
+    cursor: pointer;
+    padding: 1em;
+}
+.navigation-buttons .search-button svg:hover{
+    color:rgb(218,70,58);
+    background-color: white;
+}
