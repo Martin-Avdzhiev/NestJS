@@ -15,10 +15,21 @@
     align-items: center;
 }
 
+.main-navigation-div .pages{
+    cursor: pointer;
+}
+.main-navigation-div .pages ul li:hover{
+    text-decoration: underline;
+}
+
 .main-navigation-div .socials{
     display: flex;
     gap: 2em;
     align-items: center;
+}
+
+.main-navigation-div .socials>*{
+    cursor: pointer;
 }
 .main-image{
     width: 10%;
