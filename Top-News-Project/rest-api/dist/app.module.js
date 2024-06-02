@@ -11,13 +11,14 @@ const common_1 = require("@nestjs/common");
 const mongoose_1 = require("@nestjs/mongoose");
 const news_module_1 = require("./news/news.module");
 const users_module_1 = require("./users/users.module");
+const config_1 = require("@nestjs/config");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
 exports.AppModule = AppModule = __decorate([
     (0, common_1.Module)({
-        imports: [
-            mongoose_1.MongooseModule.forRoot("mongodb://127.0.0.1:27017/Top-News"),
+        imports: [config_1.ConfigModule.forRoot({ isGlobal: true }),
+            mongoose_1.MongooseModule.forRoot(process.env.CONNECTION || "mongodb://127.0.0.1:27017/Top-News"),
             news_module_1.NewsModule,
             users_module_1.UsersModule
         ],
