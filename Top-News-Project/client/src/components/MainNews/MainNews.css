@@ -1,0 +1,80 @@
+.main-new-container{
+    display: flex;
+    width: 100vw;
+    justify-content: center;
+    gap: 0.1em;
+    color: white;
+}
+
+.main-new-card{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 433px;
+    width: calc(100vw / 3);
+    overflow: hidden;
+    gap: 1em;
+}
+
+.main-new-card .main-new-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.main-new-container p,
+.main-new-container h2 {
+    position: relative;
+    z-index: 2;
+}
+
+.main-new-card h2{
+    font-size: 30px;
+}
+
+.main-new-card p{
+    max-width: fit-content;
+    font-size: 18px;
+    padding: 0.1em 10px;
+    border-radius: 4px;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+ /* Colors for different category paragraphs */
+
+ /* Food */
+
+.main-new-parahraph-Food{
+    background-color: #61c436;
+}
+
+.main-new-parahraph-Food:hover{
+    background-color: #57b031;
+}
+
+/* Technology */
+
+.main-new-parahraph-Technology{
+    background-color: #607ec7;
+}
+
+.main-new-parahraph-Technology:hover{
+    background-color: #5771b4;
+}
+
+/* Fashion */
+
+.main-new-parahraph-Fashion{
+    background-color: #ca85ca;
+}
+
+.main-new-parahraph-Fashion:hover{
+    background-color: #a86fa8;
+}
