@@ -9,6 +9,7 @@
 .wrapper-main-new-card{
     overflow: hidden;
     background-color: black;
+    cursor: pointer;
 }
 .main-new-card{
     position: relative;

@@ -33,6 +33,7 @@
 }
 .main-image{
     width: 10%;
+    cursor: pointer;
 }
 .main-image img{
     width: 100%;
