@@ -9,4 +9,7 @@ export class NewDto{
     @IsNotEmpty()
     @IsString()
     content:string;
+    @IsNotEmpty()
+    @IsString()
+    imageUrl:string;
 }
