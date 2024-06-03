@@ -36,6 +36,7 @@
 }
 .navigation-buttons .second-navigation-ul li>svg{
     font-size: 12px;
+    padding-left: 0.3em;
 }
 
 .navigation-buttons .search-button{
