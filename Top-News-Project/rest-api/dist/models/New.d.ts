@@ -24,12 +24,14 @@
 /// <reference types="mongoose" />
 /// <reference types="mongoose/types/inferschematype" />
 /// <reference types="mongoose/types/inferrawdoctype" />
+import { Categories } from "src/validation/newsModelValidation";
 export declare class New {
     title: string;
     content: string;
     imageUrl: string;
     subTitle: string;
     writer: string;
+    category: Categories;
 }
 export declare const NewSchema: import("mongoose").Schema<New, import("mongoose").Model<New, any, any, any, import("mongoose").Document<unknown, any, New> & New & {
     _id: import("mongoose").Types.ObjectId;

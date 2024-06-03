@@ -23,7 +23,7 @@ __decorate([
     __metadata("design:type", String)
 ], New.prototype, "content", void 0);
 __decorate([
-    (0, mongoose_1.Prop)({ required: true, minlength: 10 }),
+    (0, mongoose_1.Prop)({ required: true }),
     __metadata("design:type", String)
 ], New.prototype, "imageUrl", void 0);
 __decorate([
@@ -31,9 +31,13 @@ __decorate([
     __metadata("design:type", String)
 ], New.prototype, "subTitle", void 0);
 __decorate([
-    (0, mongoose_1.Prop)({ required: true, minlength: 10 }),
+    (0, mongoose_1.Prop)({ required: true }),
     __metadata("design:type", String)
 ], New.prototype, "writer", void 0);
+__decorate([
+    (0, mongoose_1.Prop)({ required: true }),
+    __metadata("design:type", String)
+], New.prototype, "category", void 0);
 exports.New = New = __decorate([
     (0, mongoose_1.Schema)()
 ], New);

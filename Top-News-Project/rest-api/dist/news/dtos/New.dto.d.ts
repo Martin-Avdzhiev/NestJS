@@ -4,4 +4,5 @@ export declare class NewDto {
     imageUrl: string;
     subTitle: string;
     writer: string;
+    category: string;
 }

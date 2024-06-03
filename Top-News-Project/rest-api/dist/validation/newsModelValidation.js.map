@@ -1,0 +1,1 @@
+{"version":3,"file":"newsModelValidation.js","sourceRoot":"","sources":["../../src/validation/newsModelValidation.ts"],"names":[],"mappings":";;;AAEA,MAAM,eAAe,GAAiB,CAAC,YAAY,EAAE,aAAa,EAAE,MAAM,EAAE,SAAS,CAAC,CAAC;AAEvF,SAAgB,eAAe,CAAC,QAAgB;IAC5C,OAAO,eAAe,CAAC,QAAQ,CAAC,QAAsB,CAAC,CAAC;AAC5D,CAAC;AAFD,0CAEC"}

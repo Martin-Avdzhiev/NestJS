@@ -16,6 +16,7 @@ exports.NewsController = void 0;
 const common_1 = require("@nestjs/common");
 const news_service_1 = require("./news.service");
 const New_dto_1 = require("./dtos/New.dto");
+const newsModelValidation_1 = require("../validation/newsModelValidation");
 let NewsController = class NewsController {
     constructor(newsService) {
         this.newsService = newsService;
@@ -40,6 +41,9 @@ let NewsController = class NewsController {
     }
     async createNew(NewDto) {
         try {
+            if (!(0, newsModelValidation_1.isValidCategory)(NewDto.category)) {
+                throw new common_1.HttpException(`${NewDto.category} is not valid category!`, 400);
+            }
             const newNew = await this.newsService.createNew(NewDto);
             return `You created ${newNew.title}`;
         }

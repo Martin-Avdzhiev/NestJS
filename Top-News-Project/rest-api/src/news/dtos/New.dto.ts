@@ -21,4 +21,8 @@ export class NewDto{
     @IsNotEmpty()
     @IsString()
     writer:string;
+
+    @IsNotEmpty()
+    @IsString()
+    category:string;
 }

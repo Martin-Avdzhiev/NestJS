@@ -1,7 +1,7 @@
-import { Body, Controller, Delete, Get, Param, Post, Put, UsePipes, ValidationPipe } from "@nestjs/common";
+import { Body, Controller, Delete, Get, HttpException, Param, Post, Put, UsePipes, ValidationPipe } from "@nestjs/common";
 import { NewsService } from "./news.service";
 import { NewDto } from "./dtos/New.dto";
-
+import { isValidCategory } from "src/validation/newsModelValidation";
 @Controller("news")
 export class NewsController {
     constructor(private newsService: NewsService) { }
@@ -31,6 +31,9 @@ export class NewsController {
     @UsePipes(new ValidationPipe())
     async createNew(@Body() NewDto: NewDto) {
         try {
+            if (!isValidCategory(NewDto.category)) {
+                throw new HttpException(`${NewDto.category} is not valid category!`, 400);
+            }
             const newNew = await this.newsService.createNew(NewDto);
             return `You created ${newNew.title}`;
         } catch (error) {
