@@ -23,7 +23,7 @@ __decorate([
     __metadata("design:type", String)
 ], User.prototype, "password", void 0);
 exports.User = User = __decorate([
-    (0, mongoose_1.Schema)()
+    (0, mongoose_1.Schema)({ timestamps: true })
 ], User);
 exports.UserSchema = mongoose_1.SchemaFactory.createForClass(User);
 //# sourceMappingURL=User.js.map

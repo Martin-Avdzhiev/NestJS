@@ -1,8 +1,9 @@
 import { Prop, Schema, SchemaFactory } from "@nestjs/mongoose";
 
+
 import { Categories } from "src/validation/newsModelValidation";
 
-@Schema()
+@Schema({timestamps: true})
 export class New {
 
     @Prop({ required: true, unique: true, minlength: 5 })
@@ -22,6 +23,9 @@ export class New {
 
     @Prop({ required: true })
     category: Categories;
+
+
+    
 }
 
 export const NewSchema = SchemaFactory.createForClass(New);

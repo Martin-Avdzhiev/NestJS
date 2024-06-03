@@ -39,7 +39,7 @@ __decorate([
     __metadata("design:type", String)
 ], New.prototype, "category", void 0);
 exports.New = New = __decorate([
-    (0, mongoose_1.Schema)()
+    (0, mongoose_1.Schema)({ timestamps: true })
 ], New);
 exports.NewSchema = mongoose_1.SchemaFactory.createForClass(New);
 //# sourceMappingURL=New.js.map
