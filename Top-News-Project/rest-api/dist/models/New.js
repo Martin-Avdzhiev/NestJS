@@ -22,6 +22,10 @@ __decorate([
     (0, mongoose_1.Prop)({ required: true, minlength: 10 }),
     __metadata("design:type", String)
 ], New.prototype, "content", void 0);
+__decorate([
+    (0, mongoose_1.Prop)({ required: true, minlength: 10 }),
+    __metadata("design:type", String)
+], New.prototype, "imageUrl", void 0);
 exports.New = New = __decorate([
     (0, mongoose_1.Schema)()
 ], New);
