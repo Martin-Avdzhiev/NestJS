@@ -11,6 +11,12 @@ export class New {
 
     @Prop({ required: true, minlength: 10 })
     imageUrl: string;
+
+    @Prop({ required: true, minlength: 10 })
+    subTitle: string;
+
+    @Prop({ required: true, minlength: 10 })
+    writer: string;
 }
 
 export const NewSchema = SchemaFactory.createForClass(New);

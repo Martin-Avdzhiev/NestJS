@@ -28,6 +28,8 @@ export declare class New {
     title: string;
     content: string;
     imageUrl: string;
+    subTitle: string;
+    writer: string;
 }
 export declare const NewSchema: import("mongoose").Schema<New, import("mongoose").Model<New, any, any, any, import("mongoose").Document<unknown, any, New> & New & {
     _id: import("mongoose").Types.ObjectId;
