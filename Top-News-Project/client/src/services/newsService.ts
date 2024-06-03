@@ -1,7 +1,6 @@
 import { New } from "../Types/NewsTypes";
 
-const url = "http://localhost:10000/news";
-//"https://nestjs-28nx.onrender.com/news"
+const url = import.meta.env.VITE_API_URL;
 
 export async function getMainNews(){
         const response = await fetch(url);
