@@ -6,17 +6,32 @@
     color: white;
 }
 
+.wrapper-main-new-card{
+    overflow: hidden;
+    background-color: black;
+}
 .main-new-card{
     position: relative;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: auto;
+    height: 433px;
     width: calc(100vw / 3);
     overflow: hidden;
     gap: 1em;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: black;
 }
+
+.main-new-card:hover{
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
 
 .main-new-card .main-new-overlay {
     position: absolute;
@@ -24,8 +39,9 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
     z-index: 1;
+    background-color: rgb(0, 0, 0);
+    opacity: 0.5;
 }
 
 .main-new-container p,
