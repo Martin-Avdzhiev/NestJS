@@ -4,10 +4,11 @@ import { getMainNews } from "../../services/newsService";
 import { New } from "../../Types/NewsTypes";
 import Spinner from "../Spinner/Spinner";
 
-import "./MainNews.css";
+import "./MainPage.css";
 import { calculateDaysBeforeDate } from "../../services/dateService";
+import SecondNews from "../SecondNews/SecondNews";
 
-export default function MainNews() {
+export default function MainPage() {
     const [isLoading,setIsLoading] = useState(true);
     const [mainNews, setMainNews] = useState<New[]>([]);
     const [cardScales, setCardScales] = useState<{ [key: string]: number[] }>({});
@@ -61,6 +62,7 @@ export default function MainNews() {
                     </div>
                 ))}
             </div>
+            <SecondNews/>
         </>
     )
 }

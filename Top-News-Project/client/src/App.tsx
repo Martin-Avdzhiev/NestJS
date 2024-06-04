@@ -1,5 +1,5 @@
 import './App.css'
-import MainNews from './components/MainNews/MainNews'
+import MainPage from './components/MainPage/MainPage'
 import Navigation from './components/Navigation/Navigation'
 import SecondNavigation from './components/SecondNavigation/SecondNavigation'
 import { Routes, Route } from 'react-router-dom'
@@ -10,7 +10,7 @@ function App() {
       <Navigation />
       <SecondNavigation />
       <Routes>
-        <Route path='/' element={<MainNews />} />
+        <Route path='/' element={<MainPage />} />
       </Routes>
     </>
   )

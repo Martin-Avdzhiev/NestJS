@@ -7,3 +7,9 @@ export async function getMainNews(){
         const data: New[] = (await response.json()).slice(0,3);
         return data;
 }
+
+export async function getNewsByCategory(category:string){
+        const response = await fetch(`${url}/${category}`);
+        const data: New[] = await response.json();
+        return data;
+}
