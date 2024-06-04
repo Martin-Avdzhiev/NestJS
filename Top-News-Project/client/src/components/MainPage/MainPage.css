@@ -95,3 +95,30 @@
 .main-new-parahraph-fashion:hover{
     background-color: #a86fa8;
 }
+/* Lifestyle */
+
+.main-new-parahraph-lifestyle{
+    background-color: #f4b23f;
+}
+
+.main-new-parahraph-lifestyle:hover{
+    background-color: #e2a53b;
+}
+/* Environment */
+
+.main-new-parahraph-environment{
+    background-color: #9b51e0;
+}
+
+.main-new-parahraph-environment:hover{
+    background-color: #8c49cb;
+}
+/* Music */
+
+.main-new-parahraph-music{
+    background-color: #46c49c;
+}
+
+.main-new-parahraph-music:hover{
+    background-color: #3ca785;
+}

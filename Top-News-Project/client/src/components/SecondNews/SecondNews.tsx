@@ -20,18 +20,25 @@ export default function SecondNews() {
                     <div className="column-container">
                         {firstCategoryNews.length > 1 ? <div className="first-new-container">
                             <h2>Fashion</h2>
-                            <img
-                                src={firstCategoryNews[0].imageUrl}
-                                alt={firstCategoryNews[0].title} />
-                            <h4 style={{ color: "rgb(229,78,167)" }}>
-                                {firstCategoryNews[0].category}
-                            </h4>
-                            <p className="first-new-timestamp">
-                                {calculateDaysBeforeDate(firstCategoryNews[0].createdAt)}
-                            </p>
-                            <p className="firstnew-subtitle">
-                                {firstCategoryNews[0].subtitle}
-                            </p>
+                            <div className="first-new-card-container">
+                                <div className="first-new-card-container-img-wrapper">
+                                    <img
+                                        src={firstCategoryNews[0].imageUrl}
+                                        alt={firstCategoryNews[0].title} />
+                                </div>
+                                <h4 style={{ color: "rgb(229,78,167)" }}>
+                                    {`${firstCategoryNews[0].category[0].toUpperCase()}${firstCategoryNews[0].category.slice(1)}`}
+                                </h4>
+                                <h3>{firstCategoryNews[0].title}</h3>
+                                <p className="first-new-timestamp" style={{ color: "rgb(155,155,155)" }}>
+                                    {calculateDaysBeforeDate(firstCategoryNews[0].createdAt)}
+                                </p>
+                                <p className="firstnew-subtitle">
+                                    {firstCategoryNews[0].title.length > 100 ?
+                                        `${firstCategoryNews[0].title.slice(0, 100)}...` :
+                                        `${firstCategoryNews[0].title.slice(0, 100)}`}
+                                </p>
+                            </div>
                         </div>
 
                             : null}
