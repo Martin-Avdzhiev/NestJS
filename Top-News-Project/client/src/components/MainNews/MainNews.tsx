@@ -5,6 +5,7 @@ import { New } from "../../Types/NewsTypes";
 import Spinner from "../Spinner/Spinner";
 
 import "./MainNews.css";
+import { calculateDaysBeforeDate } from "../../services/dateService";
 
 export default function MainNews() {
     const [isLoading,setIsLoading] = useState(true);
@@ -55,6 +56,7 @@ export default function MainNews() {
                             ></div>
                             <p className={`main-new-parahraph-${x.category}`}>{x.category}</p>
                             <h2>{x.title}</h2>
+                            <p className="main-card-timestamp">{calculateDaysBeforeDate(x.createdAt)}</p>
                         </div>
                     </div>
                 ))}
