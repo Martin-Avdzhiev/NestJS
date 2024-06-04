@@ -2,10 +2,12 @@ import { useEffect, useState } from "react";
 
 import { getMainNews } from "../../services/newsService";
 import { New } from "../../Types/NewsTypes";
+import Spinner from "../Spinner/Spinner";
 
 import "./MainNews.css";
 
 export default function MainNews() {
+    const [isLoading,setIsLoading] = useState(true);
     const [mainNews, setMainNews] = useState<New[]>([]);
     const [cardScales, setCardScales] = useState<{ [key: string]: number[] }>({});
     const handleZoomIn = (cardId: string) => {
@@ -23,12 +25,13 @@ export default function MainNews() {
     };
     useEffect(() => {
         getMainNews()
-            .then((data: New[]) => setMainNews(data))
+            .then((data: New[]) => {setMainNews(data)})
             .catch((error) => console.log(error));
-
+        setIsLoading(false);
     }, [])
     return (
         <>
+            {isLoading ? <Spinner/> : null}
             <div className="main-new-container">
                 {mainNews.map((x) => (
                     <div className="wrapper-main-new-card">
