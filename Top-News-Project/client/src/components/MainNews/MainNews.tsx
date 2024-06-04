@@ -54,7 +54,7 @@ export default function MainNews() {
                                     transition: "opacity 0.2s ease-in-out",
                                 }}
                             ></div>
-                            <p className={`main-new-parahraph-${x.category}`}>{x.category}</p>
+                            <p className={`main-new-parahraph-${x.category}`}>{`${x.category[0].toUpperCase()}${x.category.slice(1)}`}</p>
                             <h2>{x.title}</h2>
                             <p className="main-card-timestamp">{calculateDaysBeforeDate(x.createdAt)}</p>
                         </div>
