@@ -27,9 +27,11 @@ export default function MainPage() {
     };
     useEffect(() => {
         getMainNews()
-            .then((data: New[]) => {setMainNews(data)})
+            .then((data: New[]) => {
+                setMainNews(data)
+                setIsLoading(false);
+            })
             .catch((error) => console.log(error));
-        setIsLoading(false);
     }, [])
     return (
         <>
