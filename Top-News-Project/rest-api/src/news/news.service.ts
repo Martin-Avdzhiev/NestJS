@@ -13,6 +13,11 @@ export class NewsService {
         return news;
     }
 
+    getNewsByCateogry(category:string) {
+        const news = this.newModel.find({category:category});
+        return news;
+    }
+
     getNewById(id: string) {
         const oneNew = this.newModel.findById(id);
         if (!oneNew) { throw new HttpException("New is not found", 404) };

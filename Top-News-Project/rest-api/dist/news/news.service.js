@@ -25,6 +25,10 @@ let NewsService = class NewsService {
         const news = this.newModel.find();
         return news;
     }
+    getNewsByCateogry(category) {
+        const news = this.newModel.find({ category: category });
+        return news;
+    }
     getNewById(id) {
         const oneNew = this.newModel.findById(id);
         if (!oneNew) {

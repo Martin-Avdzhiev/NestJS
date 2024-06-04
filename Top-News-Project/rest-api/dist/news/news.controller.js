@@ -30,6 +30,16 @@ let NewsController = class NewsController {
             return this.newsService.catchError(error);
         }
     }
+    async getNewsByCategory(category) {
+        console.log(category);
+        try {
+            const news = await this.newsService.getNewsByCateogry(category.toLowerCase());
+            return news;
+        }
+        catch (error) {
+            return this.newsService.catchError(error);
+        }
+    }
     async getNewById(id) {
         try {
             const oneNew = await this.newsService.getNewById(id);
@@ -77,6 +87,13 @@ __decorate([
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", Promise)
 ], NewsController.prototype, "getNews", null);
+__decorate([
+    (0, common_1.Get)("/:category"),
+    __param(0, (0, common_1.Param)("category")),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String]),
+    __metadata("design:returntype", Promise)
+], NewsController.prototype, "getNewsByCategory", null);
 __decorate([
     (0, common_1.Get)("/:id"),
     __param(0, (0, common_1.Param)("id")),
