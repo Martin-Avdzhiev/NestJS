@@ -2,7 +2,7 @@ export declare class NewDto {
     title: string;
     content: string;
     imageUrl: string;
-    subTitle: string;
+    subtitle: string;
     writer: string;
     category: string;
 }

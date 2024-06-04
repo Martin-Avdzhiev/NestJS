@@ -4,7 +4,6 @@ export function isoToDateYMD(isoDate: number): string {
 }
 
 export function calculateDaysBeforeDate(isoDate: number): string {
-    console.log(isoDate)
     const parsedDate = new Date(Date.parse(isoDate.toString()));
     const currentDate = new Date();
     const millisecondsDiff = currentDate.getTime() - parsedDate.getTime();

@@ -16,7 +16,7 @@ export class NewDto{
 
     @IsNotEmpty()
     @IsString()
-    subTitle:string;
+    subtitle:string;
 
     @IsNotEmpty()
     @IsString()

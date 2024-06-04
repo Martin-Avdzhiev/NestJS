@@ -1,0 +1,30 @@
+.main-second-news-container-wrapper{
+    display: flex;
+    justify-content: center;
+    width: 70%;
+    margin: 0 auto;
+}
+.main-second-news-container{
+    display: flex;
+}
+
+.column-container{
+    width: 450px;
+    margin-top: 2em;
+}
+
+.column-container h2 {
+    background-color: rgb(255, 255, 255);
+    margin: 1em 0;
+    padding: 0.5em 0;
+    border-top: 1px solid red;
+    font-weight: 500;
+}
+
+.column-container img{
+    width: 100%;
+    height: auto;
+}
+.first-new-container{
+    background-color: rgb(249,249,249);
+}
