@@ -29,7 +29,7 @@ __decorate([
 __decorate([
     (0, mongoose_1.Prop)({ required: true, minlength: 10 }),
     __metadata("design:type", String)
-], New.prototype, "subTitle", void 0);
+], New.prototype, "subtitle", void 0);
 __decorate([
     (0, mongoose_1.Prop)({ required: true }),
     __metadata("design:type", String)

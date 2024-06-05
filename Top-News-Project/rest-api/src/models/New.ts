@@ -16,7 +16,7 @@ export class New {
     imageUrl: string;
 
     @Prop({ required: true, minlength: 10 })
-    subTitle: string;
+    subtitle: string;
 
     @Prop({ required: true })
     writer: string;

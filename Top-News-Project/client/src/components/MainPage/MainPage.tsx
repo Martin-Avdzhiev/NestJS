@@ -38,11 +38,11 @@ export default function MainPage() {
             {isLoading ? <Spinner/> : null}
             <div className="main-new-container">
                 {mainNews.map((x) => (
-                    <div className="wrapper-main-new-card">
+                    <div className="wrapper-main-new-card" key={x._id}>
+                        
 
                         <div
                             className="main-new-card"
-                            key={x._id}
                             onMouseEnter={() => handleZoomIn(x._id)}
                             onMouseLeave={() => handleZoomOut(x._id)}
                             style={{

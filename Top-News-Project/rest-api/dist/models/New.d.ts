@@ -29,7 +29,7 @@ export declare class New {
     title: string;
     content: string;
     imageUrl: string;
-    subTitle: string;
+    subtitle: string;
     writer: string;
     category: Categories;
 }

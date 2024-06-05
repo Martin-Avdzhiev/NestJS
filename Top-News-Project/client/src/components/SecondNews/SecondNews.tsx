@@ -19,7 +19,7 @@ export default function SecondNews() {
                 <div className="main-second-news-container">
                     <div className="column-container">
                         {firstCategoryNews.length > 1 ? <div className="first-new-container">
-                            <h2>Fashion</h2>
+                            <h2 className="category-title">Fashion</h2>
                             <div className="first-new-card-container">
                                 <div className="first-new-card-container-img-wrapper">
                                     <img
@@ -39,7 +39,23 @@ export default function SecondNews() {
                                         `${firstCategoryNews[0].title.slice(0, 100)}`}
                                 </p>
                             </div>
+                            <div className="secondary-news-container">
+                                {firstCategoryNews.slice(1).map((x) => (
+                                    <div className="secondary-new-card-container" key={x._id}>
+                                        <div className="secondary-img-container">
+                                            <img src={x.imageUrl} alt={x.title} />
+                                        </div>
+                                        <div className="secondary-new-card-info">
+                                        <p style={{ color: "rgb(229,78,167)" }}>
+                                            {`${x.category[0].toUpperCase()}${x.category.slice(1)}`}
+                                        </p>
+                                        <h3>{x.title}</h3>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
                         </div>
+
 
                             : null}
                     </div>
