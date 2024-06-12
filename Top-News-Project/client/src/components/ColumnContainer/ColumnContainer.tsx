@@ -1,14 +1,21 @@
 import { useEffect, useState } from "react";
+
 import { New } from "../../Types/NewsTypes";
 import { calculateDaysBeforeDate } from "../../services/dateService";
 import { getNewsByCategory } from "../../services/newsService";
+import { handleZoomIn, handleZoomOut } from "../../animations/zoom";
 
 import "./ColumnContainer.css";
+import { CardScale } from "../../Types/AnimationTypes";
 export default function ColumnContainer({index,category} : {index:number, category:string}){
+    const [cardZoom, setCardZoom] = useState<{ [key: string]: CardScale}>({});
     const [firstCategoryNews, setFirstCategoryNews] = useState<New[]>([]);
     useEffect(() => {
         getNewsByCategory(category)
-            .then((data: New[]) => setFirstCategoryNews(data))
+            .then((data: New[]) => {
+            setFirstCategoryNews(data)
+            console.log(firstCategoryNews[index]._id)
+            })
             .catch((error) => console.log(error));
     }, [])
     return (
@@ -16,8 +23,18 @@ export default function ColumnContainer({index,category} : {index:number, catego
         {firstCategoryNews.length > 0 ? <div className="first-new-container">
             <h2 className="category-title">Fashion</h2>
             <div className="first-new-card-container">
-                <div className="first-new-card-container-img-wrapper">
+                <div className="first-new-card-container-img-wrapper" style={{width: "90%", margin:"0 auto"}}
+                >
                     <img
+                    onMouseEnter={() => handleZoomIn(firstCategoryNews[index]._id,1.1,setCardZoom)}
+                    onMouseLeave={() => handleZoomOut(firstCategoryNews[index]._id,1,setCardZoom)}
+                    style={{
+                        transform: `scale(${firstCategoryNews[index]._id ? cardZoom[firstCategoryNews[index]._id]?.zoom : 1})`,
+                        transition: "transform 0.3s ease-in-out",
+                        overflow: "hidden",
+                        cursor:"pointer",
+                        width: "100%"
+                    }}
                         src={firstCategoryNews[index].imageUrl}
                         alt={firstCategoryNews[index].title} />
                 </div>
@@ -38,7 +55,17 @@ export default function ColumnContainer({index,category} : {index:number, catego
                 {firstCategoryNews.slice(1).map((x) => (
                     <div className="secondary-new-card-container" key={x._id}>
                         <div className="secondary-img-container">
-                            <img src={x.imageUrl} alt={x.title} />
+                            <img 
+                               onMouseEnter={() => handleZoomIn(x._id,1.05,setCardZoom)}
+                               onMouseLeave={() => handleZoomOut(x._id,1,setCardZoom)}
+                               style={{
+                                   transform: `scale(${x._id ? cardZoom[x._id]?.zoom : 1})`,
+                                   transition: "transform 0.3s ease-in-out",
+                                   overflow: "hidden",
+                                   cursor:"pointer",
+                                   width: "100%"
+                               }}
+                            src={x.imageUrl} alt={x.title} />
                         </div>
                         <div className="secondary-new-card-info">
                             <p style={{ color: "rgb(229,78,167)" }}>

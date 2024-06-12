@@ -9,10 +9,11 @@ import "./MainPage.css";
 import { calculateDaysBeforeDate } from "../../services/dateService";
 import { handleZoomIn, handleZoomOut } from "../../animations/zoom";
 import { handleOpacityIn, handleOpacityOut } from "../../animations/opacity";
+import { CardScale } from "../../Types/AnimationTypes";
 export default function MainPage() {
     const [isLoading, setIsLoading] = useState(true);
     const [mainNews, setMainNews] = useState<New[]>([]);
-    const [cardScales, setCardScales] = useState<{ [key: string]: {zoom:number, opacity :number} }>({});
+    const [cardScales, setCardScales] = useState<{ [key: string]: CardScale }>({});
 
     useEffect(() => {
         getMainNews()
