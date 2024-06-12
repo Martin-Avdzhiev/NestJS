@@ -31,7 +31,6 @@ let NewsController = class NewsController {
         }
     }
     async getNewsByCategory(category) {
-        console.log(category);
         try {
             const news = await this.newsService.getNewsByCateogry(category.toLowerCase());
             console.log(news);
