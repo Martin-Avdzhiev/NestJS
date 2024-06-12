@@ -1,6 +1,6 @@
 .main-new-container{
     display: flex;
-    width: 100vw;
+    width: 100%;
     justify-content: center;
     gap: 0.1em;
     color: white;
@@ -114,15 +114,15 @@
 /* Fashion */
 
 .main-new-parahraph-fashion{
-    background-color: #ca85ca;
+    background-color: #e54e7e;
 }
 
 .main-new-parahraph-fashion:hover{
-    background-color: #a86fa8;
+    background-color: #d64976;
 }
 
 .main-new-parahraph-fashion-color{
-    color: #ca85ca;
+    color: #e54e7e;
 }
 .main-new-parahraph-fashion-color:hover{
     text-decoration: underline;
@@ -131,7 +131,7 @@
 }
 
 .main-new-parahraph-fashion-border-top{
-    border-top: 1px solid #ca85ca;
+    border-top: 1px solid #e54e7e;
 }
 
 
