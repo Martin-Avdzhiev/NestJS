@@ -22,6 +22,7 @@ export class NewsController {
         console.log(category)
         try {
             const news = await this.newsService.getNewsByCateogry(category.toLowerCase());
+            console.log(news)
             return news;
         } catch (error) {
             return this.newsService.catchError(error);

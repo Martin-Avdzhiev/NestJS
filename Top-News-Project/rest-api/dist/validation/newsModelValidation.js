@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.isValidCategory = void 0;
-const categoriesArray = ["Technology", "Environment", "Food", "Fashion", "Lifestyle", "Music"];
+const categoriesArray = ["technology", "environment", "food", "fashion", "lifestyle", "music"];
 function isValidCategory(category) {
     return categoriesArray.includes(category);
 }

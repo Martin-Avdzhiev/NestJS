@@ -1,6 +1,6 @@
-export type Categories = "Technology" | "Environment" | "Food" | "Fashion" | "Lifestyle" | "Music";
+export type Categories = "technology" | "environment" | "food" | "fashion" | "lifestyle" | "music";
 
-const categoriesArray: Categories[] = ["Technology", "Environment", "Food", "Fashion", "Lifestyle", "Music"];
+const categoriesArray: Categories[] = ["technology", "environment", "food", "fashion", "lifestyle", "music"];
 
 export function isValidCategory(category: string): boolean {
     return categoriesArray.includes(category as Categories);
