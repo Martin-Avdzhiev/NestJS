@@ -11,5 +11,6 @@ export async function getMainNews(){
 export async function getNewsByCategory(category:string){
         const response = await fetch(`${url}/${category}`);
         const data: New[] = await response.json();
+        console.log(data)
         return data;
 }
