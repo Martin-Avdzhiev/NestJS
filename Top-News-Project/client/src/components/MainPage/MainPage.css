@@ -75,6 +75,18 @@
 .main-new-parahraph-food:hover{
     background-color: #57b031;
 }
+.main-new-parahraph-food-color{
+    color: #61c436;
+}
+.main-new-parahraph-food-color:hover{
+    text-decoration: underline;
+    cursor: pointer;
+
+}
+
+.main-new-parahraph-food-border-top{
+    border-top: 1px solid #61c436;
+}
 
 /* Technology */
 
@@ -86,6 +98,19 @@
     background-color: #5771b4;
 }
 
+.main-new-parahraph-technology-color{
+    color: #607ec7;
+}
+.main-new-parahraph-technology-color:hover{
+    text-decoration: underline;
+    cursor: pointer;
+
+}
+
+.main-new-parahraph-food-border-top{
+    border-top: 1px solid #61c436;
+}
+
 /* Fashion */
 
 .main-new-parahraph-fashion{
@@ -95,6 +120,22 @@
 .main-new-parahraph-fashion:hover{
     background-color: #a86fa8;
 }
+
+.main-new-parahraph-fashion-color{
+    color: #ca85ca;
+}
+.main-new-parahraph-fashion-color:hover{
+    text-decoration: underline;
+    cursor: pointer;
+
+}
+
+.main-new-parahraph-fashion-border-top{
+    border-top: 1px solid #ca85ca;
+}
+
+
+
 /* Lifestyle */
 
 .main-new-parahraph-lifestyle{
@@ -104,6 +145,21 @@
 .main-new-parahraph-lifestyle:hover{
     background-color: #e2a53b;
 }
+
+.main-new-parahraph-lifestyle-color{
+    color: #f4b23f;
+}
+.main-new-parahraph-lifestyle-color:hover{
+    text-decoration: underline;
+    cursor: pointer;
+
+}
+
+.main-new-parahraph-lifestyle-border-top{
+    border-top: 1px solid #f4b23f;
+}
+
+
 /* Environment */
 
 .main-new-parahraph-environment{
@@ -113,6 +169,20 @@
 .main-new-parahraph-environment:hover{
     background-color: #8c49cb;
 }
+
+.main-new-parahraph-environment-color{
+    color: #9b51e0;
+}
+.main-new-parahraph-environment-color:hover{
+    text-decoration: underline;
+    cursor: pointer;
+
+}
+
+.main-new-parahraph-environment-border-top{
+    border-top: 1px solid #9b51e0;
+}
+
 /* Music */
 
 .main-new-parahraph-music{
@@ -121,4 +191,16 @@
 
 .main-new-parahraph-music:hover{
     background-color: #3ca785;
+}
+
+.main-new-parahraph-music-color{
+    color: #46c49c;
+}
+.main-new-parahraph-music-color:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.main-new-parahraph-music-border-top{
+    border-top: 1px solid #46c49c;
 }
