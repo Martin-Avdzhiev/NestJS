@@ -1,3 +1,4 @@
+import Categories from "../Categories/Categories";
 import ColumnContainer from "../ColumnContainer/ColumnContainer";
 
 import "./SecondNews.css";
@@ -11,13 +12,7 @@ export default function SecondNews() {
 
                     <ColumnContainer index={0} category={"fashion"} />
                     <ColumnContainer index={0} category={"lifestyle"} />
-
-                    <div className="column-container">
-
-                    </div>
-                    <div className="categories-container">
-
-                    </div>
+                    <Categories />
                     <div className="featured-posts">
 
                     </div>

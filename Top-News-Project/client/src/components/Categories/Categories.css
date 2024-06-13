@@ -1,0 +1,96 @@
+.categories-container {
+    display: flex;
+    flex-direction: column;
+    width: 340px;
+    margin-top: 2em;
+}
+
+.categories-container .categories-title {
+    background-color: rgb(255, 255, 255);
+    margin: 1em 0 0 0;
+    padding: 0.5em 0;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 20px;
+    border: 1px solid rgb(220, 220, 220);
+}
+
+.list-of-categories {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+}
+
+.list-of-categories .name-and-number-of-posts-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0em 0em 0em 1.5em;
+}
+
+.list-of-categories .name-and-number-of-posts-wrapper .category-number-of-posts {
+    color: white;
+    padding: 0.6em;
+    width: 42px;
+    height: 42px;
+}
+
+/* Environment */
+
+.list-of-categories .name-and-number-of-posts-wrapper:nth-child(1) {
+    border-left: 3px solid #9b51e0;
+}
+
+.list-of-categories .name-and-number-of-posts-wrapper:nth-child(1) .category-number-of-posts {
+    background-color: #9b51e0;
+}
+
+/* Fashion */
+
+.list-of-categories .name-and-number-of-posts-wrapper:nth-child(2) {
+    border-left: 3px solid #e54e7e;
+}
+
+.list-of-categories .name-and-number-of-posts-wrapper:nth-child(2) .category-number-of-posts {
+    background-color: #e54e7e;
+}
+
+/* Food */
+
+.list-of-categories .name-and-number-of-posts-wrapper:nth-child(3) {
+    border-left: 3px solid #61c436;
+}
+
+.list-of-categories .name-and-number-of-posts-wrapper:nth-child(3) .category-number-of-posts {
+    background-color: #61c436;
+}
+
+/* Lifestyle */
+
+.list-of-categories .name-and-number-of-posts-wrapper:nth-child(4) {
+    border-left: 3px solid #f4b23f;
+}
+
+.list-of-categories .name-and-number-of-posts-wrapper:nth-child(4) .category-number-of-posts {
+    background-color: #f4b23f;
+}
+
+/* Music */
+
+.list-of-categories .name-and-number-of-posts-wrapper:nth-child(5) {
+    border-left: 3px solid #46c49c;
+}
+
+.list-of-categories .name-and-number-of-posts-wrapper:nth-child(5) .category-number-of-posts {
+    background-color: #46c49c;
+}
+
+/* Technology */
+
+.list-of-categories .name-and-number-of-posts-wrapper:nth-child(6) {
+    border-left: 3px solid #607ec7;
+}
+
+.list-of-categories .name-and-number-of-posts-wrapper:nth-child(6) .category-number-of-posts {
+    background-color: #607ec7;
+}
