@@ -1,4 +1,5 @@
 import "./Categories.css";
+import "./Categories-animation.css";
 
 export default function Categories() {
     return (

@@ -19,23 +19,24 @@
     display: flex;
     flex-direction: column;
     background-color: white;
+    position: relative;
 }
 
-.list-of-categories .name-and-number-of-posts-wrapper {
+.name-and-number-of-posts-wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0em 0em 0em 1.5em;
-}
-
-.list-of-categories .name-and-number-of-posts-wrapper .category-number-of-posts {
-    color: white;
-    padding: 0.6em;
-    width: 42px;
-    height: 42px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
 }
 
 /* Environment */
+
+.list-of-categories .name-and-number-of-posts-wrapper:nth-child(1) {
+    border-left: 3px solid #9b51e0;
+}
 
 .list-of-categories .name-and-number-of-posts-wrapper:nth-child(1) {
     border-left: 3px solid #9b51e0;
