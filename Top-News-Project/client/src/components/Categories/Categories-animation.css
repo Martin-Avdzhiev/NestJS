@@ -54,7 +54,7 @@ background-color: #607ec7;
     height: 42px;
 }
 
-.list-of-categories .name-and-number-of-posts-wrapper .category-name:hover {
+.list-of-categories .name-and-number-of-posts-wrapper:hover {
     cursor: pointer;
 }
 
