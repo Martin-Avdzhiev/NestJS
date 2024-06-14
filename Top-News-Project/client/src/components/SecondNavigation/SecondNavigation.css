@@ -6,12 +6,12 @@
 
 .navigation-buttons{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 20em;
 }
 .navigation-buttons .second-navigation-ul{
     display: flex;
     list-style-type: none;
-    margin-left: 18.5em;
 }
 
 .navigation-buttons .second-navigation-ul>li{
@@ -40,7 +40,6 @@
 }
 
 .navigation-buttons .search-button{
-    margin-right: 22em;
     display: flex;
     align-items: center;
     border-left: 2px solid rgb(235,235,235);
