@@ -13,8 +13,8 @@ export class NewsService {
         return news;
     }
 
-    getNewsByCateogry(category:string) {
-        const news = this.newModel.find({category:category});
+    getNewsByCateogry(category: string) {
+        const news = this.newModel.find({ category: category });
         return news;
     }
 
@@ -23,6 +23,13 @@ export class NewsService {
         if (!oneNew) { throw new HttpException("New is not found", 404) };
         return oneNew;
     }
+
+    async getLastNews(limit: number) {
+        const data = await this.newModel.find({}).sort([["date", -1]])
+        const latestNews = data.slice(data.length - limit);
+        return latestNews;
+    }
+
     createNew(NewDto: NewDto) {
         const createdNew = new this.newModel(NewDto).save();
         return createdNew;

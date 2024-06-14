@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 
-import { New } from "../../Types/NewsTypes";
-import { calculateDaysBeforeDate } from "../../services/dateService";
-import { getNewsByCategory } from "../../services/newsService";
-import { handleZoomIn, handleZoomOut } from "../../animations/zoom";
+import { New } from "../../../../Types/NewsTypes";
+import { calculateDaysBeforeDate } from "../../../../services/dateService";
+import { getNewsByCategory } from "../../../../services/newsService";
+import { handleZoomIn, handleZoomOut } from "../../../../animations/zoom";
 
 import "./ColumnContainer.css";
-import { CardScale } from "../../Types/AnimationTypes";
+import { CardScale } from "../../../../Types/AnimationTypes";
 export default function ColumnContainer({ index, category }: { index: number, category: string }) {
     const [cardZoom, setCardZoom] = useState<{ [key: string]: CardScale }>({});
     const [firstCategoryNews, setFirstCategoryNews] = useState<New[]>([]);

@@ -1,4 +1,4 @@
-import { Body, Controller, Delete, Get, HttpException, Param, Post, Put, UsePipes, ValidationPipe } from "@nestjs/common";
+import { Body, Controller, Delete, Get, HttpException, Param, Post, Put, Query, UsePipes, ValidationPipe } from "@nestjs/common";
 import { NewsService } from "./news.service";
 import { NewDto } from "./dtos/New.dto";
 import { isValidCategory } from "src/validation/newsModelValidation";
@@ -17,7 +17,9 @@ export class NewsController {
         }
     }
 
-    @Get("/:category")
+    
+    
+    @Get("/categories/:category")
     async getNewsByCategory(@Param("category") category:string) {
         try {
             const news = await this.newsService.getNewsByCateogry(category.toLowerCase());
@@ -27,6 +29,17 @@ export class NewsController {
         }
     }
 
+    @Get("/featured-posts")
+    async getLastNews(@Query("limit") limit:number) {
+        console.log(limit)
+        try {
+            const latestNews = await this.newsService.getLastNews(limit);
+            return latestNews;
+        } catch (error) {
+            return this.newsService.catchError(error);
+        }
+    }
+    
     @Get("/:id")
     async getNewById(@Param("id") id: string) {
         try {

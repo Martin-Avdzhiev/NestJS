@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 import { getMainNews } from "../../services/newsService";
 import { New } from "../../Types/NewsTypes";
-import SecondNews from "../SecondNews/SecondNews";
+import SecondNews from "./SecondNews/SecondNews";
 import Spinner from "../Spinner/Spinner";
 
 import "./MainPage.css";

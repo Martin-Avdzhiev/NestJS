@@ -39,6 +39,16 @@ let NewsController = class NewsController {
             return this.newsService.catchError(error);
         }
     }
+    async getLastNews(limit) {
+        console.log(limit);
+        try {
+            const latestNews = await this.newsService.getLastNews(limit);
+            return latestNews;
+        }
+        catch (error) {
+            return this.newsService.catchError(error);
+        }
+    }
     async getNewById(id) {
         try {
             const oneNew = await this.newsService.getNewById(id);
@@ -87,12 +97,19 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], NewsController.prototype, "getNews", null);
 __decorate([
-    (0, common_1.Get)("/:category"),
+    (0, common_1.Get)("/categories/:category"),
     __param(0, (0, common_1.Param)("category")),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", Promise)
 ], NewsController.prototype, "getNewsByCategory", null);
+__decorate([
+    (0, common_1.Get)("/featured-posts"),
+    __param(0, (0, common_1.Query)("limit")),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Number]),
+    __metadata("design:returntype", Promise)
+], NewsController.prototype, "getLastNews", null);
 __decorate([
     (0, common_1.Get)("/:id"),
     __param(0, (0, common_1.Param)("id")),

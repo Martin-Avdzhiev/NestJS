@@ -37,6 +37,11 @@ let NewsService = class NewsService {
         ;
         return oneNew;
     }
+    async getLastNews(limit) {
+        const data = await this.newModel.find({}).sort([["date", -1]]);
+        const latestNews = data.slice(data.length - limit);
+        return latestNews;
+    }
     createNew(NewDto) {
         const createdNew = new this.newModel(NewDto).save();
         return createdNew;

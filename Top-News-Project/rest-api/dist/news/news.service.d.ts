@@ -44,6 +44,9 @@ export declare class NewsService {
     }, import("mongoose").Document<unknown, {}, New> & New & {
         _id: import("mongoose").Types.ObjectId;
     }, {}, New, "findOne", {}>;
+    getLastNews(limit: number): Promise<(import("mongoose").Document<unknown, {}, New> & New & {
+        _id: import("mongoose").Types.ObjectId;
+    })[]>;
     createNew(NewDto: NewDto): Promise<import("mongoose").Document<unknown, {}, New> & New & {
         _id: import("mongoose").Types.ObjectId;
     }>;

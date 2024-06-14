@@ -5,6 +5,7 @@ export declare class NewsController {
     constructor(newsService: NewsService);
     getNews(): Promise<any>;
     getNewsByCategory(category: string): Promise<any>;
+    getLastNews(limit: number): Promise<any>;
     getNewById(id: string): Promise<any>;
     createNew(NewDto: NewDto): Promise<any>;
     editNew(data: NewDto, id: string): Promise<any>;
