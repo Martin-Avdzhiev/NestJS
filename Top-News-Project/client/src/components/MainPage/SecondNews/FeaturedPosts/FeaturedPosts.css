@@ -4,6 +4,50 @@
     padding: 0.5em 0;
     font-weight: 600;
     text-transform: uppercase;
-    font-size: 20px;
+    font-size: 16px;
     border: 1px solid rgb(220, 220, 220);
+}
+
+.featured-posts-wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    background-color: white;
+    padding: 1em 0 1em 1em;
+}
+
+.featured-post-card{
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+
+.featured-posts-container .featured-post-img-conatainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    width: 150px;
+    height: 100%;
+}
+.featured-posts-container .featured-post-img-conatainer img{
+    width: 100%;
+    height: auto;
+}
+
+.featured-posts-container .featured-post-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    flex: 1;
+    text-align: start;
+    padding-right: 2em;
+}
+.featured-posts-container .featured-post-title{
+    font-size: 14px;
+}
+.featured-posts-container .featured-post-title:hover{
+    color: rgb(218, 79, 90);
+    cursor: pointer;
 }

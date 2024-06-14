@@ -40,7 +40,6 @@ let NewsController = class NewsController {
         }
     }
     async getLastNews(limit) {
-        console.log(limit);
         try {
             const latestNews = await this.newsService.getLastNews(limit);
             return latestNews;
