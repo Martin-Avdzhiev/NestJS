@@ -23,10 +23,10 @@ export default function FeaturedPosts() {
                         <div className="featured-post-card" key={x._id}>
                             <div className="featured-post-img-conatainer">
                                 <img
-                                    onMouseEnter={() => handleZoomIn(x._id, 1.1, setCardZoom)}
-                                    onMouseLeave={() => handleZoomOut(x._id, 1, setCardZoom)}
+                                    onMouseEnter={() => handleZoomIn(x._id + "123", 1.1, setCardZoom)}
+                                    onMouseLeave={() => handleZoomOut(x._id + "123", 1, setCardZoom)}
                                     style={{
-                                        transform: `scale(${x._id ? cardZoom[x._id]?.zoom : 1})`,
+                                        transform: `scale(${x._id ? cardZoom[x._id + "123"]?.zoom : 1})`,
                                         transition: "transform 0.3s ease-in-out",
                                         overflow: "hidden",
                                         cursor: "pointer",
