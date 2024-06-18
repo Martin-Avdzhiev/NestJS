@@ -14,7 +14,6 @@ export default function ColumnContainer({ index, category }: { index: number, ca
         getNewsByCategory(category)
             .then((data: New[]) => {
                 setFirstCategoryNews(data)
-                console.log(firstCategoryNews[index]._id)
             })
             .catch((error) => console.log(error));
     }, [])
