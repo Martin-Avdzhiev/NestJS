@@ -1,8 +1,8 @@
 {
     "version": 2,
     "env": {
-        "MONGODB_URI": "@top_news_mongo_api",
-        "PORT": "@top_news_port"
+        "MONGODB_URI": "@MONGODB_URI",
+        "PORT": "@PORT"
     },
     "builds": [
         {
