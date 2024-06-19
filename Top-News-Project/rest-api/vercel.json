@@ -1,5 +1,8 @@
 {
     "version": 2,
+    "env": {
+        "MONGODB_URI": "@top-news-mongo-api"
+    },
     "builds": [
         {
             "src": "src/main.ts",
