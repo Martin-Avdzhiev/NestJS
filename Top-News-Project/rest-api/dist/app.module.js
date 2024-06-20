@@ -18,7 +18,7 @@ exports.AppModule = AppModule;
 exports.AppModule = AppModule = __decorate([
     (0, common_1.Module)({
         imports: [config_1.ConfigModule.forRoot({ isGlobal: true }),
-            mongoose_1.MongooseModule.forRoot(process.env.CONNECTION || "mongodb://127.0.0.1:27017/Top-News"),
+            mongoose_1.MongooseModule.forRoot(process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/Top-News"),
             news_module_1.NewsModule,
             users_module_1.UsersModule
         ],
