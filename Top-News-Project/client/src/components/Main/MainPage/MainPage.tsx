@@ -1,15 +1,15 @@
 import { useEffect, useState } from "react";
 
-import { getMainNews } from "../../services/newsService";
-import { New } from "../../Types/NewsTypes";
+import { getMainNews } from "../../../services/newsService";
+import { New } from "../../../Types/NewsTypes";
 import SecondNews from "./SecondNews/SecondNews";
-import Spinner from "../Spinner/Spinner";
+import Spinner from "../../Spinner/Spinner";
 
 import "./MainPage.css";
-import { calculateDaysBeforeDate } from "../../services/dateService";
-import { handleZoomIn, handleZoomOut } from "../../animations/zoom";
-import { handleOpacityIn, handleOpacityOut } from "../../animations/opacity";
-import { CardScale } from "../../Types/AnimationTypes";
+import { calculateDaysBeforeDate } from "../../../services/dateService";
+import { handleZoomIn, handleZoomOut } from "../../../animations/zoom";
+import { handleOpacityIn, handleOpacityOut } from "../../../animations/opacity";
+import { CardScale } from "../../../Types/AnimationTypes";
 export default function MainPage() {
     const [isLoading, setIsLoading] = useState(true);
     const [mainNews, setMainNews] = useState<New[]>([]);
