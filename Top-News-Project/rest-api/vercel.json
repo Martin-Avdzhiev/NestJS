@@ -4,10 +4,6 @@
       {
         "src": "src/main.ts",
         "use": "@vercel/node",
-        "env": {
-          "PORT": "PORT",
-          "MONGODB_URI": "MONGODB_URI"
-        },
         "builds": [
           {
             "src": "src",
@@ -16,11 +12,7 @@
               "NODE_ENV": "production"
             }
           }
-        ],
-        "output": {
-          "dir": "dist",
-          "format": "cjs"
-        }
+        ]
       }
     ],
     "routes": [
@@ -29,5 +21,9 @@
         "dest": "dist/main.js",
         "methods": ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"]
       }
-    ]
+    ],
+    "env": {
+      "PORT": "PORT",
+      "MONGODB_URI": "MONGODB_URI"
+    }
   }
