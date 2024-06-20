@@ -13,6 +13,8 @@ export default function SecondNews() {
                     <div className="main-container-post">
                         <ColumnContainer index={0} category={"fashion"} />
                         <ColumnContainer index={0} category={"lifestyle"} />
+                        <ColumnContainer index={0} category={"food"} />
+                        <ColumnContainer index={0} category={"environment"} />
                     </div>
                     <div className="side-container-categories">
                         <Categories />
