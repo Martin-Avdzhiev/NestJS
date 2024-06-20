@@ -7,9 +7,9 @@
       }
     ],
     "env": {
-      "PORT": "@port",
-      "MONGODB_URI": "@mongodb_uri"
-    },
+    "PORT": "@PORT",
+    "MONGODB_URI": "@MONGODB_URI"
+  },
     "routes": [
       {
         "src": "/(.*)",
