@@ -1,3 +1,4 @@
+import LatestArticles from "../../LatestArticles/LatestArticles";
 import Categories from "./Categories/Categories";
 import ColumnContainer from "./ColumnContainer/ColumnContainer";
 import FeaturedPosts from "./FeaturedPosts/FeaturedPosts";
@@ -15,11 +16,11 @@ export default function SecondNews() {
                         <ColumnContainer index={0} category={"lifestyle"} />
                         <ColumnContainer index={0} category={"food"} />
                         <ColumnContainer index={0} category={"environment"} />
+                        <LatestArticles/>
                     </div>
                     <div className="side-container-categories">
                         <Categories />
                         <FeaturedPosts />
-
                     </div>
                 </div>
             </div>

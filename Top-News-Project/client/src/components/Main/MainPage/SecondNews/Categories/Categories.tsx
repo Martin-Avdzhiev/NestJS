@@ -5,7 +5,7 @@ export default function Categories() {
     return (
         <>
             <div className="categories-container">
-                <h3 className="categories-title">Categories</h3>
+                <h3 className="categories-title" style={{marginTop: "0"}}>Categories</h3>
                 <div className="list-of-categories">
                     <div className="name-and-number-of-posts-wrapper">
                         <p className="category-name">Environment</p>
