@@ -29,7 +29,7 @@ export class NewsController {
         }
     }
 
-    @Get("/featured-posts")
+    @Get("/latest-posts")
     async getLastNews(@Query("limit") limit:number) {
         try {
             const latestNews = await this.newsService.getLastNews(limit);

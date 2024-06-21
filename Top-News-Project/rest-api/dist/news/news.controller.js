@@ -103,7 +103,7 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], NewsController.prototype, "getNewsByCategory", null);
 __decorate([
-    (0, common_1.Get)("/featured-posts"),
+    (0, common_1.Get)("/latest-posts"),
     __param(0, (0, common_1.Query)("limit")),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Number]),

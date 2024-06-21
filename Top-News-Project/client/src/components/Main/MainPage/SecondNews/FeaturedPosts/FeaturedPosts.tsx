@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 import { New } from "../../../../../Types/NewsTypes";
-import { getLatesNews } from "../../../../../services/newsService";
+import { getLatestNews } from "../../../../../services/newsService";
 import { handleZoomIn, handleZoomOut } from "../../../../../animations/zoom";
 import { CardScale } from "../../../../../Types/AnimationTypes";
 
@@ -11,7 +11,7 @@ export default function FeaturedPosts() {
     const [latestNews, setLatesNews] = useState<New[]>([]);
     const [cardZoom, setCardZoom] = useState<{ [key: string]: CardScale }>({});
     useEffect(() => {
-        getLatesNews(3).then((data) => setLatesNews(data));
+        getLatestNews(3).then((data) => setLatesNews(data));
     })
     return (
         <>

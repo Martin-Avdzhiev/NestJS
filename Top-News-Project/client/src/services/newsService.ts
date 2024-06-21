@@ -13,8 +13,8 @@ export async function getNewsByCategory(category:string){
         const data: New[] = await response.json();
         return data;
 }
-export async function getLatesNews(limit:number){
-        const response = await fetch(`${url}/featured-posts?limit=${limit}`);
+export async function getLatestNews(limit:number){
+        const response = await fetch(`${url}/latest-posts?limit=${limit}`);
         const data: New[] = await response.json();
         return data;
 }
