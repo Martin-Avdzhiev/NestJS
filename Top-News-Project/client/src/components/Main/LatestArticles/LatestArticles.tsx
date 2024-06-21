@@ -36,7 +36,11 @@ export default function LatestArticles(){
                             </div>
                             <div className="latest-post-info">
                                 <p className={`latest-post-category main-new-parahraph-${x.category}-color`}>{x.category[0].toUpperCase() + x.category.slice(1)}</p>
-                                <h3 className="latest-post-title">{x.title}</h3>
+                                <h2 className="latest-post-title" 
+                                style={{
+                                    transition: "color 0.3s ease-in-out"
+                                }}
+                                >{x.title}</h2>
                                 <p className="latest-post-timestamp">{calculateDaysBeforeDate(x.createdAt)}</p>
                             </div>
                         </div>

@@ -43,5 +43,21 @@
 }
 
 .latest-posts-wrapper .latest-post-card .latest-post-info{
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    align-items: start;
+    text-align: start;
     width: 55%;
+    gap: 0.5em;
+    background-color: white;
+}
+
+.latest-posts-wrapper .latest-post-card .latest-post-info .latest-post-title:hover{
+    color: rgb(218,79,90);
+    cursor: pointer;
+}
+
+.latest-posts-wrapper .latest-post-card .latest-post-info .latest-post-timestamp{
+    color: rgb(155,155,155);
 }
