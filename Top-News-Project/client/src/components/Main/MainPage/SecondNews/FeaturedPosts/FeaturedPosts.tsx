@@ -36,7 +36,7 @@ export default function FeaturedPosts() {
                             </div>
                             <div className="featured-post-info">
                                 <p className={`featured-post-category main-new-parahraph-${x.category}-color`}>{x.category[0].toUpperCase() + x.category.slice(1)}</p>
-                                <h3 className="featured-post-title">{x.title}</h3>
+                                <h3 className="featured-post-title" style={{ transition: "color 0.3s ease-in-out" }}>{x.title}</h3>
                             </div>
                         </div>
                     )) : null}

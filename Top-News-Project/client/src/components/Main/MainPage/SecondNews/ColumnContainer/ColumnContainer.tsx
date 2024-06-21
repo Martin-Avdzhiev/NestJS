@@ -43,7 +43,9 @@ export default function ColumnContainer({ index, category }: { index: number, ca
                         <h4 className={`main-new-parahraph-${firstCategoryNews[index].category}-color`}>
                             {`${firstCategoryNews[0].category[0].toUpperCase()}${firstCategoryNews[index].category.slice(1)}`}
                         </h4>
-                        <h3>{firstCategoryNews[0].title}</h3>
+                        <h3 style={{
+                            transition: "color 0.3s ease-in-out"
+                        }}>{firstCategoryNews[0].title}</h3>
                         <p className="first-new-timestamp" style={{ color: "rgb(155,155,155)" }}>
                             {calculateDaysBeforeDate(firstCategoryNews[0].createdAt)}
                         </p>
@@ -73,13 +75,16 @@ export default function ColumnContainer({ index, category }: { index: number, ca
                                     <p className={`main-new-parahraph-${x.category}-color`}>
                                         {`${x.category[0].toUpperCase()}${x.category.slice(1)}`}
                                     </p>
-                                    <h3>{x.title}</h3>
+                                    <h3 style={{
+                                        transition: "color 0.3s ease-in-out"
+                                    }}
+                                    >{x.title}</h3>
                                 </div>
                             </div>
                         ))}
                     </div>
                 </div>
-                
+
                 : null}
         </div>
     )
