@@ -33,13 +33,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 45%;
+    width: 35%;
     overflow: hidden;
 }
 
 .latest-posts-wrapper .latest-post-card .latest-post-img-conatainer img{
-    width: 500px;
-    height: calc((400px * 9) /16);
+    width: 400px;
+    height: auto;
 }
 
 .latest-posts-wrapper .latest-post-card .latest-post-info{
@@ -48,7 +48,7 @@
     padding: 1em;
     align-items: start;
     text-align: start;
-    width: 55%;
+    width: 65%;
     gap: 0.5em;
     background-color: white;
 }
