@@ -36,7 +36,7 @@ export default function LatestArticles(){
                             </div>
                             <div className="latest-post-info">
                                 <p className={`latest-post-category main-new-parahraph-${x.category}-color`}>{x.category[0].toUpperCase() + x.category.slice(1)}</p>
-                                <h2 className="latest-post-title" 
+                                <h2 className="red-text-animation" 
                                 style={{
                                     transition: "color 0.3s ease-in-out"
                                 }}

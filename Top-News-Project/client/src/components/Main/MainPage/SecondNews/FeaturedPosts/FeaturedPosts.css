@@ -18,7 +18,6 @@
 
 .featured-post-card{
     display: flex;
-    align-items: center;
     gap: 1em;
 }
 
@@ -46,8 +45,4 @@
 }
 .featured-posts-container .featured-post-title{
     font-size: 14px;
-}
-.featured-posts-container .featured-post-title:hover{
-    color: rgb(218, 79, 90);
-    cursor: pointer;
 }

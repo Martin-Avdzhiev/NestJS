@@ -43,7 +43,7 @@ export default function ColumnContainer({ index, category }: { index: number, ca
                         <h4 className={`main-new-parahraph-${firstCategoryNews[index].category}-color`}>
                             {`${firstCategoryNews[0].category[0].toUpperCase()}${firstCategoryNews[index].category.slice(1)}`}
                         </h4>
-                        <h3 style={{
+                        <h3 className="red-text-animation" style={{
                             transition: "color 0.3s ease-in-out"
                         }}>{firstCategoryNews[0].title}</h3>
                         <p className="first-new-timestamp" style={{ color: "rgb(155,155,155)" }}>

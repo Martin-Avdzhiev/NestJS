@@ -38,10 +38,6 @@
     max-width: 25ch;
     height: 3.34em;
 }
-.main-second-news-container-wrapper .main-container-post .first-new-card-container > h3:hover{
-    color: rgb(218,79,90);
-    cursor: pointer;
-}
 
 .column-container .first-new-card-container h4 {
     font-weight: 400;

@@ -53,11 +53,6 @@
     background-color: white;
 }
 
-.latest-posts-wrapper .latest-post-card .latest-post-info .latest-post-title:hover{
-    color: rgb(218,79,90);
-    cursor: pointer;
-}
-
 .latest-posts-wrapper .latest-post-card .latest-post-info .latest-post-timestamp{
     color: rgb(155,155,155);
 }
