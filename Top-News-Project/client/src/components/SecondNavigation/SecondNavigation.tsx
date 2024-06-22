@@ -15,7 +15,7 @@ export default function SecondNavigation() {
                         <li style={{transition: "color 0.3s ease-in-out"}}>Features <FontAwesomeIcon icon={['fas', 'chevron-down']} /></li>
                         <li style={{transition: "color 0.3s ease-in-out"}}>Contact</li>
                     </ul>
-                    <div className="search-button"><FontAwesomeIcon icon={["fas", "magnifying-glass"]} /></div>
+                    <div className="search-button"><FontAwesomeIcon style={{transition: "color 0.3s ease-in-out"}} icon={["fas", "magnifying-glass"]} /></div>
                 </div>
             </div>
         </>
