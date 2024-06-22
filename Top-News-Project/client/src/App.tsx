@@ -1,7 +1,7 @@
 import './App.css'
 import MainPage from './components/Main/MainPage/MainPage'
-import Navigation from './components/Main/Navigation/Navigation'
-import SecondNavigation from './components/Main/SecondNavigation/SecondNavigation'
+import Navigation from './components/Navigation/Navigation'
+import SecondNavigation from './components/SecondNavigation/SecondNavigation'
 import { Routes, Route } from 'react-router-dom'
 function App() {
 
