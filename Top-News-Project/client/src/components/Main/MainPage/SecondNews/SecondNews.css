@@ -1,7 +1,6 @@
 .main-second-news-container-wrapper,.main-second-news-container-wrapper .main-container-post {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
     width: 70%;
     margin: 0 auto;
     gap: 2em;

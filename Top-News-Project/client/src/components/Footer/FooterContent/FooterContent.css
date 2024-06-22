@@ -1,0 +1,69 @@
+.footer-content-wrapper{
+    display: flex;
+    justify-content: center;
+    background-color: rgb(55,57,65);
+}
+
+.footer-content{
+    display: flex;
+    width: 70%;
+    gap: 2em;
+    padding: 2.5em 0;
+}
+
+.footer-content > *{
+    width: 30%;
+    background-color: rgb(44,46,52);
+    color: white;
+}
+
+.footer-most-popular {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.footer-most-popular h2{
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: 700;
+    background-color: rgb(37,39,44);
+    padding: 0.5em 0;
+}
+
+.footer-most-popular-card{
+    display: flex;
+    justify-content: center;
+    padding: 0 1em;
+}
+
+.footer-card-img-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    width: 30%;
+    height: 5em;
+}
+
+.footer-card-img-wrapper img{
+    width: 100%;
+    height: auto;
+}
+
+.footer-card-info{
+    display: flex;
+    flex-direction: column;
+    padding: 0 1em;
+    width: 65%;
+    text-align: start;
+}
+
+.footer-card-title{
+    font-size: 14px;
+}
+
+.footer-card-timestamp{
+    font-size: 12px;
+    color: rgb(155,155,155);
+}
