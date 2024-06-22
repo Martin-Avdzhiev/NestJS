@@ -6,14 +6,14 @@ export default function SecondNavigation() {
             <div className="main-second-navigation-div">
                 <div className="navigation-buttons">
                     <ul className="second-navigation-ul">
-                        <li>Home <FontAwesomeIcon icon={['fas', 'chevron-down']} /></li>
-                        <li>Layouts <FontAwesomeIcon icon={['fas', 'chevron-down']} /></li>
-                        <li>Posts <FontAwesomeIcon icon={['fas', 'chevron-down']} /></li>
-                        <li>Food <FontAwesomeIcon icon={['fas', 'chevron-down']} /></li>
-                        <li>Fashion <FontAwesomeIcon icon={['fas', 'chevron-down']} /></li>
-                        <li>Archives <FontAwesomeIcon icon={['fas', 'chevron-down']} /></li>
-                        <li>Features <FontAwesomeIcon icon={['fas', 'chevron-down']} /></li>
-                        <li>Contact</li>
+                        <li style={{transition: "color 0.3s ease-in-out"}}>Home <FontAwesomeIcon icon={['fas', 'chevron-down']}  /></li>
+                        <li style={{transition: "color 0.3s ease-in-out"}}>Layouts <FontAwesomeIcon icon={['fas', 'chevron-down']} /></li>
+                        <li style={{transition: "color 0.3s ease-in-out"}}>Posts <FontAwesomeIcon icon={['fas', 'chevron-down']} /></li>
+                        <li style={{transition: "color 0.3s ease-in-out"}}>Food <FontAwesomeIcon icon={['fas', 'chevron-down']} /></li>
+                        <li style={{transition: "color 0.3s ease-in-out"}}>Fashion <FontAwesomeIcon icon={['fas', 'chevron-down']} /></li>
+                        <li style={{transition: "color 0.3s ease-in-out"}}>Archives <FontAwesomeIcon icon={['fas', 'chevron-down']} /></li>
+                        <li style={{transition: "color 0.3s ease-in-out"}}>Features <FontAwesomeIcon icon={['fas', 'chevron-down']} /></li>
+                        <li style={{transition: "color 0.3s ease-in-out"}}>Contact</li>
                     </ul>
                     <div className="search-button"><FontAwesomeIcon icon={["fas", "magnifying-glass"]} /></div>
                 </div>
