@@ -23,7 +23,7 @@ body {
   /* 
   Add this to html element in tsx file 
   style={{
-    transition: "color 0.3s ease-in-out"
+    transition: "color 0.3s ease-in-out",
   }} 
     */
 }
