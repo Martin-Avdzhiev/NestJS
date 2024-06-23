@@ -19,7 +19,7 @@ export default function FeaturedPosts() {
 
     useEffect(() => {
         getLatestNews(3).then((data) => setLatestNews(data));
-    })
+    },[])
     return (
         <>
             <div className="featured-posts-container">

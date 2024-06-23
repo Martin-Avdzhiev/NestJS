@@ -20,7 +20,7 @@ export default function LatestArticles(){
 
     useEffect(() => {
         getLatestNews(10).then((data) => setLatestNews(data));
-    })
+    },[])
     return (
         <>
         <div className="latest-posts-container">
