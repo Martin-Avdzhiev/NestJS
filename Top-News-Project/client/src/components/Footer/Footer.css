@@ -1,15 +1,12 @@
 .footer-container-wrapper{
-    position: relative;
     margin-top: 2em;
 }
 
 .footer-container{
     display: flex;
     flex-direction: column;
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
+    flex: 0;
 }
 
 .footer-down-container{

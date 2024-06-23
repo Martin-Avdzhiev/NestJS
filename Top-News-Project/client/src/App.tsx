@@ -8,12 +8,16 @@ function App() {
 
   return (
     <>
-      <Navigation />
-      <SecondNavigation />
-      <Routes>
-        <Route path='/' element={<MainPage />} />
-      </Routes>
-      <Footer/>
+      <div className="page-container-wrapper">
+        <div className="page-container">
+          <Navigation />
+          <SecondNavigation />
+          <Routes>
+            <Route path='/' element={<MainPage />} />
+          </Routes>
+        </div>
+        <Footer />
+      </div>
     </>
   )
 }
