@@ -6,10 +6,17 @@ import { getLatestNews } from "../../../../../services/newsService";
 import { handleZoomIn, handleZoomOut } from "../../../../../animations/zoom";
 
 import "./FeaturedPosts.css";
+import { useNavigate } from "react-router-dom";
 
 export default function FeaturedPosts() {
     const [latestNews, setLatestNews] = useState<New[]>([]);
     const [cardZoom, setCardZoom] = useState<{ [key: string]: CardScale }>({});
+
+    const navigate = useNavigate();
+    const redirectHandler = (id:string) => {
+        navigate(`/post/${id}`);
+    }
+
     useEffect(() => {
         getLatestNews(3).then((data) => setLatestNews(data));
     })
@@ -23,6 +30,7 @@ export default function FeaturedPosts() {
                         <div className="featured-post-card" key={x?._id + "123"}>
                             <div className="featured-post-img-conatainer">
                                 <img
+                                    onClick={() => redirectHandler(x?._id)}
                                     onMouseEnter={() => handleZoomIn(x?._id + "123", 1.1, setCardZoom)}
                                     onMouseLeave={() => handleZoomOut(x?._id + "123", 1, setCardZoom)}
                                     style={{
@@ -36,7 +44,9 @@ export default function FeaturedPosts() {
                             </div>
                             <div className="featured-post-info">
                                 <p className={`featured-post-category main-new-parahraph-${x.category}-color`}>{x.category[0].toUpperCase() + x.category.slice(1)}</p>
-                                <h3 className="featured-post-title red-text-animation" style={{ transition: "color 0.3s ease-in-out" }}>{x.title}</h3>
+                                <h3  onClick={() => redirectHandler(x?._id)}
+                                className="featured-post-title red-text-animation" 
+                                style={{ transition: "color 0.3s ease-in-out" }}>{x.title}</h3>
                             </div>
                         </div>
                     )) : null}

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import { getMainNews } from "../../../services/newsService";
 import { New } from "../../../Types/NewsTypes";
@@ -10,11 +11,17 @@ import { calculateDaysBeforeDate } from "../../../services/dateService";
 import { handleZoomIn, handleZoomOut } from "../../../animations/zoom";
 import { handleOpacityIn, handleOpacityOut } from "../../../animations/opacity";
 import { CardScale } from "../../../Types/AnimationTypes";
+
+
 export default function MainPage() {
     const [isLoading, setIsLoading] = useState(true);
     const [mainNews, setMainNews] = useState<New[]>([]);
     const [cardScales, setCardScales] = useState<{ [key: string]: CardScale }>({});
 
+    const navigate = useNavigate();
+    const redirectHandler = (id:string) => {
+        navigate(`/post/${id}`);
+    }
     useEffect(() => {
         getMainNews()
             .then((data: New[]) => {
@@ -30,10 +37,9 @@ export default function MainPage() {
                     <div className="main-new-container">
                         {mainNews.map((x) => (
                             <div className="wrapper-main-new-card" key={x._id}>
-
-
                                 <div
                                     className="main-new-card"
+                                    onClick={() => redirectHandler(x._id)}
                                     onMouseEnter={() => {
                                         handleZoomIn(x._id, 1.1, setCardScales);
                                         handleOpacityIn(x._id, 0.8, setCardScales);

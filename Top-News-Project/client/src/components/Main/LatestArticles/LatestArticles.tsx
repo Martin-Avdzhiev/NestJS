@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import { New } from "../../../Types/NewsTypes";
 import { CardScale } from "../../../Types/AnimationTypes";
@@ -11,6 +12,12 @@ import "./LatestArticles.css";
 export default function LatestArticles(){
     const [latestNews, setLatestNews] = useState<New[]>([]);
     const [cardZoom, setCardZoom] = useState<{ [key: string]: CardScale }>({});
+
+    const navigate = useNavigate();
+    const redirectHandler = (id:string) => {
+        navigate(`/post/${id}`);
+    }
+
     useEffect(() => {
         getLatestNews(10).then((data) => setLatestNews(data));
     })
@@ -24,6 +31,7 @@ export default function LatestArticles(){
                         <div className="latest-post-card" key={x?._id + "1234"}>
                             <div className="latest-post-img-conatainer">
                                 <img
+                                 onClick={() => redirectHandler(x._id)}
                                     onMouseEnter={() => handleZoomIn(x?._id + "1234", 1.1, setCardZoom)}
                                     onMouseLeave={() => handleZoomOut(x?._id + "1234", 1, setCardZoom)}
                                     style={{
@@ -36,7 +44,7 @@ export default function LatestArticles(){
                             </div>
                             <div className="latest-post-info">
                                 <p className={`latest-post-category main-new-parahraph-${x.category}-color`}>{x.category[0].toUpperCase() + x.category.slice(1)}</p>
-                                <h2 className="red-text-animation" 
+                                <h2  onClick={() => redirectHandler(x._id)} className="red-text-animation" 
                                 style={{
                                     transition: "color 0.3s ease-in-out"
                                 }}

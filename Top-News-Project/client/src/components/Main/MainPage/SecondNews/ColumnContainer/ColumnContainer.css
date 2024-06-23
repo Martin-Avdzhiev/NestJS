@@ -84,10 +84,6 @@
     font-size: 14px;
 }
 
-.secondary-news-container .secondary-new-card-container .secondary-new-card-info h3:hover{
-    color: rgb(218,79,90);
-    cursor: pointer;
-}
 .secondary-news-container .secondary-new-card-container .secondary-new-card-info p:hover{
     text-decoration: underline;
     cursor: pointer;
