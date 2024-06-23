@@ -1,6 +1,7 @@
 export type New = {
     title: string;
     subtitle: string;
+    content:string;
     imageUrl: string;
     category: string;
     writer: string;

@@ -8,6 +8,12 @@ export async function getMainNews(){
         return data;
 }
 
+export async function getNewById(id:string){
+        const response = await fetch(`${url}/${id}`);
+        const data: New = await response.json();
+        return data;
+}
+
 export async function getNewsByCategory(category:string){
         const response = await fetch(`${url}/categories/${category}`);
         const data: New[] = await response.json();
