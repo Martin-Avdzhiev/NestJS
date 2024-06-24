@@ -1,8 +1,10 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
+import { useNavigate } from "react-router-dom";
+
 import "./Navigation.css";
 
-import { useNavigate } from "react-router-dom";
+
 export default function Navigation() {
     const navigate = useNavigate();
     const navigateToMainPage = () => {
@@ -30,7 +32,7 @@ export default function Navigation() {
             </div>
             <div className="main-image-wrapper">
             <div className="main-image">
-                <img src="./voice_logo.png" alt="voice-logo" onClick={navigateToMainPage}/>
+                <img src="/public/voice_logo.png" alt="voice-logo" onClick={navigateToMainPage}/>
             </div>
             </div>
 
