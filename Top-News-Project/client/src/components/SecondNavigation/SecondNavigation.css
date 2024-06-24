@@ -6,8 +6,9 @@
 
 .navigation-buttons{
     display: flex;
-    justify-content: center;
     gap: 20em;
+    width: 70%;
+    margin: 0 auto;
 }
 .navigation-buttons .second-navigation-ul{
     display: flex;
