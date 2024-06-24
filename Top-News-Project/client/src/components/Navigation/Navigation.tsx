@@ -32,7 +32,7 @@ export default function Navigation() {
             </div>
             <div className="main-image-wrapper">
             <div className="main-image">
-                <img src="/public/voice_logo.png" alt="voice-logo" onClick={navigateToMainPage}/>
+                <img src="/Images/voice_logo.png" alt="voice-logo" onClick={navigateToMainPage}/>
             </div>
             </div>
 
