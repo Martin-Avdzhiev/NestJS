@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import { New } from "../../../../Types/NewsTypes";
 import { calculateDaysBeforeDate } from "../../../../services/dateService";
@@ -6,7 +7,6 @@ import { handleZoomIn, handleZoomOut } from "../../../../animations/zoom";
 
 import "./FooterCard.css";
 import { CardScale } from "../../../../Types/AnimationTypes";
-import { useNavigate } from "react-router-dom";
 
 export default function FooterCard({ news }: { news: New[] }) {
     const [cardScales, setCardScales] = useState<{ [key: string]: CardScale }>({});

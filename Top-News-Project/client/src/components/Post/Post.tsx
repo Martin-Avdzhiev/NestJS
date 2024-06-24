@@ -30,7 +30,7 @@ export default function Post() {
         if (id) {
             getNewById(id).then((data) => setPost(data));
         }
-    }, [])
+    }, [id])
 
     return (
         <div className="bigger-main-one-post-container-wrapper">
