@@ -56,7 +56,7 @@
     width: 1em;
     height: 1em;
     padding: 0.7em;
-    border-radius: 10%;
+    border-radius: 7%;
 }
 .footer-socials ul *:hover{
     cursor: pointer;

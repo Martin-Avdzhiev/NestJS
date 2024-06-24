@@ -1,8 +1,11 @@
-import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import { getNewById } from '../../services/newsService';
+import { useEffect, useState } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
+
+import { getNews, getNewById } from '../../services/newsService';
 import { New } from '../../Types/NewsTypes';
+import { handleZoomIn, handleZoomOut } from '../../animations/zoom';
 
 import Categories from "../Main/MainPage/SecondNews/Categories/Categories";
 import FeaturedPosts from "../Main/MainPage/SecondNews/FeaturedPosts/FeaturedPosts";
@@ -10,13 +13,15 @@ import FeaturedPosts from "../Main/MainPage/SecondNews/FeaturedPosts/FeaturedPos
 
 import "./Post.css";
 import { calculateDaysBeforeDate } from '../../services/dateService';
+import { CardScale } from '../../Types/AnimationTypes';
 
 export default function Post() {
     const { id } = useParams<string>();
+    const [bottomPosts, setBottomPosts] = useState<New[]>([]);
     const [post, setPost] = useState<New>({
         title: "",
         subtitle: "",
-        content:"",
+        content: "",
         imageUrl: "",
         category: "",
         writer: "",
@@ -26,9 +31,22 @@ export default function Post() {
         updatedAt: 0
     })
 
+    const [cardScales, setCardScales] = useState<{ [key: string]: CardScale }>({});
+
+    const navigate = useNavigate();
+    const redirectHandler = (id: string) => {
+        navigate(`/post/${id}`);
+    }
+
     useEffect(() => {
         if (id) {
-            getNewById(id).then((data) => setPost(data));
+            const randomIndex = Math.floor(Math.random() * 10);
+            console.log(randomIndex)
+            Promise.all([
+                getNewById(id).then((data) => setPost(data)),
+                getNews().then((data) => setBottomPosts(data.slice(randomIndex, randomIndex + 2)))
+            ]).catch((error) => console.log(error));
+
         }
     }, [id])
 
@@ -49,16 +67,54 @@ export default function Post() {
                                 <img src={post.imageUrl} alt={post.title} />
                             </div>
                             <div className="one-post-content">
-                                <p style={{ 
+                                <p style={{
                                     fontSize: "16px", color: "rgb(155,155,155)",
                                     marginTop: "2em"
-                                    }}>
+                                }}>
                                     Written by <span className="one-post-writer">{post.writer}</span>
                                 </p>
                                 <div className="one-post-text-container">
-                                <p className="one-post-subtitle">{post.subtitle}</p>
-                                <p className="one-post-text">{post.content}</p>
+                                    <p className="one-post-subtitle">{post.subtitle}</p>
+                                    <p className="one-post-text">{post.content}</p>
+                                    <div className="footer-socials post-socials">
+                                        <ul>
+                                            <FontAwesomeIcon icon={['fab', 'instagram']} />
+                                            <FontAwesomeIcon icon={['fab', 'twitter']} />
+                                            <FontAwesomeIcon icon={['fab', 'facebook-f']} />
+                                            <FontAwesomeIcon icon={['fab', 'youtube']} />
+                                            <FontAwesomeIcon icon={['fab', 'pinterest-p']} />
+                                        </ul>
+                                    </div>
                                 </div>
+                            </div>
+                            <div className="one-bottom-posts">
+                                {bottomPosts.length > 0 ? bottomPosts.map((x) => (
+                                    //TODO-1:
+                                    <div key={x._id + "12345"}>
+                                        <div>
+                                            <img
+                                                onMouseEnter={() => {
+                                                    handleZoomIn(x._id, 1.1, setCardScales);
+                                                }}
+                                                onMouseLeave={() => {
+                                                    handleZoomOut(x._id, 1, setCardScales);
+                                                }}
+                                                onClick={() => redirectHandler(x._id)}
+                                                style={{
+                                                    transform: `scale(${cardScales[x._id] ? cardScales[x._id].zoom : 1})`,
+                                                    transition: "transform 0.3s ease-in-out",
+                                                    cursor: "pointer"
+                                                }}
+                                                src={x.imageUrl} alt={x.title} />
+                                        </div>
+                                        <p className="red-text-animation"
+                                            style={{
+                                                transition: "color 0.3s ease-in-out",
+                                            }}
+                                            onClick={() => redirectHandler(x._id)}
+                                        >{x.title}</p>
+                                    </div>))
+                                    : null}
                             </div>
                         </div>
                     }
