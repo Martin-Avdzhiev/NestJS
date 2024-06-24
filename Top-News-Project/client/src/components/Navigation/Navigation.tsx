@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom";
 
 import "./Navigation.css";
 
+import Logo from "../../../Images/voice_logo.png";
+
 
 export default function Navigation() {
     const navigate = useNavigate();
@@ -32,7 +34,7 @@ export default function Navigation() {
             </div>
             <div className="main-image-wrapper">
             <div className="main-image">
-                <img src="/Images/voice_logo.png" alt="voice-logo" onClick={navigateToMainPage}/>
+                <img src={Logo} alt="voice-logo" onClick={navigateToMainPage}/>
             </div>
             </div>
 
