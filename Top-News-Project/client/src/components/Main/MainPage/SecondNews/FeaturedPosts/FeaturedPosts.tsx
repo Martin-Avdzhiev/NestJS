@@ -13,20 +13,20 @@ export default function FeaturedPosts() {
     const [cardZoom, setCardZoom] = useState<{ [key: string]: CardScale }>({});
 
     const navigate = useNavigate();
-    const redirectHandler = (id:string) => {
+    const redirectHandler = (id: string) => {
         navigate(`/post/${id}`);
     }
 
     useEffect(() => {
         getLatestNews(3).then((data) => setLatestNews(data));
-    },[])
+    }, [])
     return (
         <>
             <div className="featured-posts-container">
                 <h3 className="categories-title">Featured Posts</h3>
                 <div className="featured-posts-wrapper">
                     {latestNews.length > 0 ? latestNews.map((x) => (
-
+                         //TODO-1: Fix repeating results keys.
                         <div className="featured-post-card" key={x?._id + "123"}>
                             <div className="featured-post-img-conatainer">
                                 <img
@@ -44,9 +44,9 @@ export default function FeaturedPosts() {
                             </div>
                             <div className="featured-post-info">
                                 <p className={`featured-post-category main-new-parahraph-${x.category}-color`}>{x.category[0].toUpperCase() + x.category.slice(1)}</p>
-                                <h3  onClick={() => redirectHandler(x?._id)}
-                                className="featured-post-title red-text-animation" 
-                                style={{ transition: "color 0.3s ease-in-out" }}>{x.title}</h3>
+                                <h3 onClick={() => redirectHandler(x?._id)}
+                                    className="featured-post-title red-text-animation"
+                                    style={{ transition: "color 0.3s ease-in-out" }}>{x.title}</h3>
                             </div>
                         </div>
                     )) : null}
