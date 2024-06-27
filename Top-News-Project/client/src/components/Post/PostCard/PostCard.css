@@ -1,0 +1,115 @@
+.main-one-post-container-wrapper{
+    display: flex;
+    gap: 2em;
+}
+
+.main-one-post-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70%;
+    margin-top: 2em;
+    background-color: rgb(255,255,255);
+    
+}
+
+.one-post-head{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70%;
+    gap: 0.5em;
+    padding: 2em 0 0 0;
+}
+
+.one-post-head h2{
+    margin-bottom: 1em;
+}
+
+.one-post-img-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    overflow: hidden;
+    margin-top: 2em;
+}
+.one-post-img-container img{
+    width: 100%;
+    height: auto;
+}
+
+.one-post-writer{
+    color: rgb(225,70,58);
+}
+.one-post-writer:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.one-post-text-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 5em;
+    text-align: start;
+}
+
+.one-post-subtitle{
+    font-weight: 600;
+    margin: 2em 0 3em 0;
+}
+
+.post-socials{
+    width: 100%;
+    margin: 2em 0;
+}
+
+.post-socials > ul{
+    display: flex;
+    justify-content: stretch;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    color: white;
+}
+
+.post-socials > ul > *{
+    flex: 1;
+    padding: 0.5em !important;
+}
+
+.one-bottom-posts{
+    display: flex;
+    gap: 1em;
+    padding: 1.5em;
+    width: 100%;
+    background-color: rgb(249,249,249);
+}
+
+.one-bottom-posts > div{
+    width: 50%;
+}
+
+ .one-bottom-posts > div > div{  /* img div */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 25vh;
+    overflow: hidden;
+}
+
+.one-bottom-posts > div > div img{
+    width: 100%;
+    height: auto;
+}
+
+.one-bottom-posts p{
+    font-size: 20px;
+    margin: 0 auto;
+    width: 30ch;
+    padding: 1em 0 0 0;
+    font-weight: 600;
+}

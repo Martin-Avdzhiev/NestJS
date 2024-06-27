@@ -13,5 +13,5 @@
 }
 
 .side-container-categories{
-    width: 20vw;
+    width: calc(30% - 2em);
 }
