@@ -1,11 +1,17 @@
+.main-navigation-div-wrapper{
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
 .main-navigation-div{
     display: flex;
-    justify-content: space-evenly;
     background-color: rgb(192, 66, 54);
-    padding: 1em 0;
+    padding: 1em 3em;
     color:white;
     font-size: 16px;
-    gap: 30em;
+  
 }
 
 .main-navigation-div ul {
@@ -16,6 +22,7 @@
 }
 
 .main-navigation-div .pages{
+    flex: 1;
     cursor: pointer;
 }
 .main-navigation-div .pages ul li:hover{
@@ -34,8 +41,7 @@
 
 .main-image-wrapper{
     display: flex;
-    flex-direction: column;
-    padding: 2em 0 2em 10em;
+    padding: 3em;
 }
 
 .main-image{

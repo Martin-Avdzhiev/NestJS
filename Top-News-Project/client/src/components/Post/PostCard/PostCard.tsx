@@ -44,7 +44,7 @@ export default function MainPost() {
             ]).catch((error) => console.log(error));
 
         }
-    }, [id])
+    }, [])
     return (
         <>
             {post.title &&
