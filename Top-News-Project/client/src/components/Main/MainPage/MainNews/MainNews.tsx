@@ -9,7 +9,7 @@ import { calculateDaysBeforeDate } from '../../../../services/dateService';
 
 import "./MainNews.css";
 
-export default function MainNews({ oneNew, key, length }: { oneNew: New, key: string, length: number }) {
+export default function MainNews({ oneNew, length }: { oneNew: New, length: number }) {
 
     const [cardScales, setCardScales] = useState<{ [key: string]: CardScale }>({});
 
