@@ -20,7 +20,7 @@ export default function MainNews({ oneNew, length }: { oneNew: New, length: numb
 
     return (
         <>
-            <div className="wrapper-main-new-card" key={oneNew._id}>
+            <div className="wrapper-main-new-card" key={oneNew._id} style={{    width: `calc(100% / ${length})`}}>
                 <div
                     className="main-new-card"
                     onClick={() => redirectHandler(oneNew._id)}
@@ -37,7 +37,7 @@ export default function MainNews({ oneNew, length }: { oneNew: New, length: numb
                         backgroundColor: "black",
                         transform: `scale(${cardScales[oneNew._id] ? cardScales[oneNew._id].zoom : 1})`,
                         transition: "transform 0.2s ease-in-out",
-                        width: `calc(100vw / ${length})`
+                        width: "100%"
                     }}>
                     <div className="main-new-overlay"
                         style={{

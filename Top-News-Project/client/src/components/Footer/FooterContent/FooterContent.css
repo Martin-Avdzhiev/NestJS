@@ -108,3 +108,16 @@
 .footer-socials ul svg:nth-child(6):hover{
    background-color: rgb(183,82,21);
 }
+
+@media(max-width: 1023px){
+   .footer-content{
+      flex-direction: column;
+   }
+   .footer-content > *{
+      width: 100%;
+   }
+   .footer-socials ul{
+      gap: 1.5em;
+      padding-bottom: 1em;
+   }
+}
