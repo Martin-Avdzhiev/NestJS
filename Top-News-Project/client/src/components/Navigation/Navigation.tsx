@@ -21,31 +21,40 @@ export default function Navigation() {
         <>
             <div className="main-navigation-div-wrapper">
 
-                {isUnder1023Width ? <div></div> :
-                    <div className="main-navigation-div">
-                        <div className="pages">
-                            <ul>
-                                <li>Layouts</li>
-                                <li>Typography</li>
-                                <li>Contact</li>
-                                <li>Forum</li>
-                                <li>Shop</li>
-                            </ul>
+                {isUnder1023Width ?
+                    <div className="main-image-wrapper">
+                        <span className="navigation-button-bars"><FontAwesomeIcon icon={['fas', 'bars']} /></span>
+                        <div className="main-image">
+                            <img src={Logo} alt="voice-logo" onClick={navigateToMainPage} />
                         </div>
-                        <div className="socials">
-                            <FontAwesomeIcon icon={['fab', 'facebook-f']} />
-                            <FontAwesomeIcon icon={['fab', 'twitter']} />
-                            <FontAwesomeIcon icon={['fab', 'google-plus-g']} />
-                            <FontAwesomeIcon icon={['fab', 'instagram']} />
-                            <FontAwesomeIcon icon={['fab', 'vk']} />
+                    </div> :
+                    <>
+                        <div className="main-navigation-div">
+                            <div className="pages">
+                                <ul>
+                                    <li>Layouts</li>
+                                    <li>Typography</li>
+                                    <li>Contact</li>
+                                    <li>Forum</li>
+                                    <li>Shop</li>
+                                </ul>
+                            </div>
+                            <div className="socials">
+                                <FontAwesomeIcon icon={['fab', 'facebook-f']} />
+                                <FontAwesomeIcon icon={['fab', 'twitter']} />
+                                <FontAwesomeIcon icon={['fab', 'google-plus-g']} />
+                                <FontAwesomeIcon icon={['fab', 'instagram']} />
+                                <FontAwesomeIcon icon={['fab', 'vk']} />
+                            </div>
                         </div>
-                    </div>
+                        <div className="main-image-wrapper">
+                            <div className="main-image">
+                                <img src={Logo} alt="voice-logo" onClick={navigateToMainPage} />
+                            </div>
+                        </div>
+                    </>
                 }
-                <div className="main-image-wrapper">
-                    <div className="main-image">
-                        <img src={Logo} alt="voice-logo" onClick={navigateToMainPage} />
-                    </div>
-                </div>
+
             </div>
         </>
     )

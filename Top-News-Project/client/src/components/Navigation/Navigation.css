@@ -41,6 +41,7 @@
 
 .main-image-wrapper{
     display: flex;
+    position: relative;
     padding: 3em;
 }
 
@@ -52,4 +53,23 @@
 .main-image img{
     width: 100%;
     height: auto;
+}
+
+.navigation-button-bars{
+    position: absolute;
+    left: 0;
+    color: red;
+    font-size: 30px;
+}
+
+@media(max-width:1023px){
+    .main-image-wrapper{
+        justify-content: center;
+        align-items: center;
+        margin: 0 3em;
+        padding: 1em 0;
+    }
+    .main-image{
+        width: 15%;
+    }
 }
