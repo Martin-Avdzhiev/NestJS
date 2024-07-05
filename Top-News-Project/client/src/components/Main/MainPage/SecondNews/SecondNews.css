@@ -20,6 +20,7 @@
 @media(max-width:1023px){
     .main-second-news-container-wrapper .main-container-post{
         width: 100%;
+        justify-content: center;
     }
     .main-second-news-container{
         flex-direction: column;

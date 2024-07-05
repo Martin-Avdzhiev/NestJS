@@ -108,3 +108,9 @@
        width: 45%;
     }
 }
+
+@media(max-width:800px){
+    .column-container {
+       width: 80%;
+    }
+}
