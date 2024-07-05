@@ -26,7 +26,7 @@ export default function FeaturedPosts() {
                 <h3 className="categories-title">Featured Posts</h3>
                 <div className="featured-posts-wrapper">
                     {latestNews.length > 0 ? latestNews.map((x) => (
-                         //TODO-1: Fix repeating results keys.
+                        //TODO-1: Fix repeating results keys.
                         <div className="featured-post-card" key={x?._id + "123"}>
                             <div className="featured-post-img-conatainer">
                                 <img
@@ -46,7 +46,11 @@ export default function FeaturedPosts() {
                                 <p className={`featured-post-category main-new-parahraph-${x.category}-color`}>{x.category[0].toUpperCase() + x.category.slice(1)}</p>
                                 <h3 onClick={() => redirectHandler(x?._id)}
                                     className="featured-post-title red-text-animation"
-                                    style={{ transition: "color 0.3s ease-in-out" }}>{x.title}</h3>
+                                    style={{ transition: "color 0.3s ease-in-out" }}>
+                                    {x.title.length > 20 ?
+                                        `${x.title.slice(0, 20)}...` :
+                                        `${x.title.slice(0, 20)}`}
+                                </h3>
                             </div>
                         </div>
                     )) : null}

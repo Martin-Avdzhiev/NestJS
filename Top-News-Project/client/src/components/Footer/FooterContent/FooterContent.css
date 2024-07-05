@@ -112,12 +112,40 @@
 @media(max-width: 1023px){
    .footer-content{
       flex-direction: column;
+      width: 40%;
    }
    .footer-content > *{
       width: 100%;
    }
    .footer-socials ul{
-      gap: 1.5em;
+      gap: 1em;
       padding-bottom: 1em;
+   }
+}
+
+@media(max-width:1000px){
+   .footer-socials ul svg{
+      font-size: 20px;
+   }
+}
+
+@media(max-width: 900px){
+   .footer-content{
+      width: 50%;
+   }
+}
+
+@media(max-width: 700px){
+   .footer-content{
+      width: 65%;
+   }
+}
+
+@media(max-width: 500px){
+   .footer-content{
+      width: 75%;
+   }
+   .footer-content h4{
+      font-size: 12px;
    }
 }

@@ -91,7 +91,9 @@ export default function ColumnContainer({ index, category }: { index: number, ca
                                     <h3 className="red-text-animation"  onClick={() => redirectHandler(x._id)} style={{
                                         transition: "color 0.3s ease-in-out"
                                     }}
-                                    >{x.title}</h3>
+                                    >{x.title.length > 20 ?
+                                        `${x.title.slice(0, 20)}...` :
+                                        `${x.title.slice(0, 20)}`}</h3>
                                 </div>
                             </div>
                         ))}

@@ -52,3 +52,10 @@
         padding-bottom: 1em;
     }
 }
+
+@media(max-width: 500px) {
+    .footer-down-container ul {
+       flex-wrap: wrap;
+       justify-content: center;
+    }
+}

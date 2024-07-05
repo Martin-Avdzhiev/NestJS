@@ -14,4 +14,27 @@
 
 .side-container-categories{
     width: calc(30% - 2em);
+    max-width: 400px;
+}
+
+@media(max-width:1023px){
+    .main-second-news-container-wrapper .main-container-post{
+        width: 100%;
+    }
+    .main-second-news-container{
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media(max-width:1300px){
+    .main-second-news-container-wrapper{
+        width: 90%;
+    }
+}
+
+@media(max-width:1023px){
+    .side-container-categories{
+        width: calc(100% / 3);
+    }
 }

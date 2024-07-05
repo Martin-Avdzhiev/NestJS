@@ -56,3 +56,9 @@
 .latest-posts-wrapper .latest-post-card .latest-post-info .latest-post-timestamp{
     color: rgb(155,155,155);
 }
+
+@media(max-width:1023px){
+    .latest-posts-container{
+        width: calc(90% + 2em);
+    }
+}
