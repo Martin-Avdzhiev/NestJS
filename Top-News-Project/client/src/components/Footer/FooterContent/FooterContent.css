@@ -116,7 +116,7 @@
    background-color: rgb(183, 82, 21);
 }
 
-@media(max-width: 1023px) {
+@media(max-width: 1600px) {
    .footer-content {
       flex-direction: column;
       width: 40%;
@@ -157,6 +157,9 @@
 
    .footer-content h4 {
       font-size: 12px;
+   }
+   .footer-side-container {
+      gap: 1em;
    }
 }
 

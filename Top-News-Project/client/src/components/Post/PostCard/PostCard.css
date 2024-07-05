@@ -1,19 +1,18 @@
-.main-one-post-container-wrapper{
+.main-one-post-container-wrapper {
     display: flex;
     gap: 2em;
 }
 
-.main-one-post-container{
+.main-one-post-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 70%;
-    margin-top: 2em;
-    background-color: rgb(255,255,255);
-    
+    background-color: rgb(255, 255, 255);
+
 }
 
-.one-post-head{
+.one-post-head {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -22,11 +21,11 @@
     padding: 2em 0 0 0;
 }
 
-.one-post-head h2{
-    margin-bottom: 1em;
+.one-post-head h2 {
+    margin-bottom: 0.5em;
 }
 
-.one-post-img-container{
+.one-post-img-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -34,20 +33,27 @@
     overflow: hidden;
     margin-top: 2em;
 }
-.one-post-img-container img{
+
+.one-post-img-container img {
     width: 100%;
     height: auto;
 }
 
-.one-post-writer{
-    color: rgb(225,70,58);
+.one-post-content {
+    font-size: 18px;
 }
-.one-post-writer:hover{
+
+.one-post-writer {
+    font-size: 20px;
+    color: rgb(225, 70, 58);
+}
+
+.one-post-writer:hover {
     text-decoration: underline;
     cursor: pointer;
 }
 
-.one-post-text-container{
+.one-post-text-container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -55,17 +61,19 @@
     text-align: start;
 }
 
-.one-post-subtitle{
+.one-post-subtitle {
+    font-size: 22px;
+    text-align: center;
     font-weight: 600;
-    margin: 2em 0 3em 0;
+    margin: 2em 0;
 }
 
-.post-socials{
+.post-socials {
     width: 100%;
     margin: 2em 0;
 }
 
-.post-socials > ul{
+.post-socials>ul {
     display: flex;
     justify-content: stretch;
     align-items: center;
@@ -75,24 +83,24 @@
     color: white;
 }
 
-.post-socials > ul > *{
+.post-socials>ul>* {
     flex: 1;
     padding: 0.5em !important;
 }
 
-.one-bottom-posts{
+.one-bottom-posts {
     display: flex;
-    gap: 1em;
     padding: 1.5em;
     width: 100%;
-    background-color: rgb(249,249,249);
+    background-color: rgb(249, 249, 249);
 }
 
-.one-bottom-posts > div{
+.one-bottom-posts>div {
     width: 50%;
 }
 
- .one-bottom-posts > div > div{  /* img div */
+.one-bottom-posts>div>div {
+    /* img div */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -101,15 +109,131 @@
     overflow: hidden;
 }
 
-.one-bottom-posts > div > div img{
+.one-bottom-posts>div>div img {
     width: 100%;
     height: auto;
 }
 
-.one-bottom-posts p{
+.one-bottom-posts p {
     font-size: 20px;
     margin: 0 auto;
     width: 30ch;
     padding: 1em 0 0 0;
     font-weight: 600;
+    margin-bottom: 1em;
+}
+
+@media(max-width: 1400px) {
+    .main-one-post-container-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .main-one-post-container {
+        width: 100%;
+    }
+
+    .one-post-head {
+        margin-top: 1em;
+    }
+
+    .one-post-img-container {
+        width: 70%;
+    }
+
+    .one-bottom-posts {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .one-bottom-posts>div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .one-bottom-posts>div>div {
+        width: 70%;
+    }
+}
+
+@media(max-width: 1023px) {
+    .one-post-head {
+        margin-top: 0;
+    }
+
+    div.one-post-content p.one-post-text {
+        text-align: center;
+    }
+
+    .one-bottom-posts>div>div {
+        width: 100%;
+    }
+}
+
+@media(max-width: 875px) {
+    .one-post-head {
+        width: 95%;
+    }
+}
+
+@media(max-width: 850px) {
+    .one-bottom-posts>div {
+        width: 70%;
+    }
+
+    .one-bottom-posts p {
+        font-size: 16px;
+    }
+}
+
+@media(max-width: 700px) {
+    .main-one-post-container-wrapper {
+        gap: 1em;
+    }
+
+    .one-post-subtitle {
+        font-size: 20px;
+        margin: 1em 0;
+    }
+
+    .one-post-content .one-post-text {
+        font-size: 14px;
+    }
+
+    .one-post-text-container {
+        padding: 0 2em;
+    }
+}
+
+@media(max-width: 500px) {
+
+
+    .one-post-text-container {
+        padding: 0 0.5em;
+    }
+
+    .one-bottom-posts>div {
+        width: 90%;
+    }
+
+    .one-bottom-posts{
+        padding: 0;
+    }
+
+    .one-bottom-posts p {
+        font-size: 16px;
+    }
+}
+
+@media(max-width: 400px) {
+    .one-bottom-posts p {
+        font-size: 14px;
+    }
+}
+
+@media(max-width: 350px) {
+    .one-bottom-posts p {
+        font-size: 12px;
+    }
 }

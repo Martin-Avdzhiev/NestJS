@@ -1,4 +1,4 @@
-.bigger-main-one-post-container-wrapper{   
+.bigger-main-one-post-container-wrapper {
     display: flex;
     flex-wrap: wrap;
     width: 70%;
@@ -6,9 +6,16 @@
     gap: 2em;
 }
 
-.big-main-one-post-container-wrapper{
+.big-main-one-post-container-wrapper {
     display: flex;
     flex-direction: column;
     gap: 2em;
     width: 100%;
 }
+
+@media(max-width:1400px) {
+    .bigger-main-one-post-container-wrapper {
+        width: 90%;
+    }
+}
+

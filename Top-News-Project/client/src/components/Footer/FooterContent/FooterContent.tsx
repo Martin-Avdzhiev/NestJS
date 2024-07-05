@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useMediaQuery } from "react-responsive";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { getLatestNews } from "../../../services/newsService";
@@ -12,7 +13,8 @@ export default function FooterContent() {
     const [popularNews, setPopularNews] = useState<New[]>([]);
     const [talkedAbout, setTalkedAbout] = useState<New[]>([]);
     const [isLoading, setIsLoading] = useState(true);
-
+    const isUnder500Width = useMediaQuery({ query: '(max-width: 500px)' });
+    const isUnder325Width = useMediaQuery({ query: '(max-width: 325px)' });
 
     useEffect(() => {
         Promise.all([
@@ -42,8 +44,8 @@ export default function FooterContent() {
                             <h2 className="footer-container-title">Video of the day</h2>
                             <div className="video-wrapper">
                                 <iframe
-                                    width="318"
-                                    height="150"
+                                    width={isUnder325Width ? "140" : isUnder500Width ? "220" : "318"}
+                                    height={isUnder325Width ? "80" : isUnder500Width ? "110" : "150"}
                                     src="https://www.youtube.com/embed/XsEMu5UCy0g"
                                     title="Irish Stew of Sindidun - Take Me High (Official)"
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
