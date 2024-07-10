@@ -20,7 +20,7 @@ export default function SecondNews() {
                     </div>
                     <div className="side-container-categories">
                         <Categories />
-                        <FeaturedPosts />
+                        <FeaturedPosts limit={3} />
                     </div>
                 </div>
             </div>

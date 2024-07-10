@@ -1,0 +1,68 @@
+.category-page-container-wrapper{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 0 3em;
+    gap: 2em;
+    margin-top: 2em;
+}
+
+.category-page-container{
+    width: 70%;
+}
+
+.category-page-posts-container{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+    width: 100%;
+}
+
+.category-page-container > h3{
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 0.8em;
+    background-color: white;
+}
+
+
+.category-post-card{
+    display: flex;
+}
+
+.category-post-img-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    max-width: 45%;
+    min-width: 45%;
+    height: 17em;
+}
+
+.category-post-img-container img{
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.category-post-info{
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    align-items: start;
+    text-align: start;
+    width: 65%;
+    gap: 0.5em;
+    background-color: white;
+}
+
+.category-post-timestamp{
+    color: rgb(155, 155, 155);
+}
+
+.category-page-container-wrapper > .side-container-categories .categories-title {
+    margin: 0;
+}
+

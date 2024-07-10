@@ -8,7 +8,7 @@ import { handleZoomIn, handleZoomOut } from "../../../../../animations/zoom";
 import "./FeaturedPosts.css";
 import { useNavigate } from "react-router-dom";
 
-export default function FeaturedPosts() {
+export default function FeaturedPosts({limit}: {limit:number}) {
     const [latestNews, setLatestNews] = useState<New[]>([]);
     const [cardZoom, setCardZoom] = useState<{ [key: string]: CardScale }>({});
 
@@ -18,7 +18,7 @@ export default function FeaturedPosts() {
     }
 
     useEffect(() => {
-        getLatestNews(3).then((data) => setLatestNews(data));
+        getLatestNews(limit).then((data) => setLatestNews(data));
     }, [])
     return (
         <>
