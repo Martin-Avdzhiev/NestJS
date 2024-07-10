@@ -7,6 +7,7 @@ import Post from './components/Post/Post';
 
 import { Routes, Route } from 'react-router-dom'
 import ScrollToTop from './components/scrollToTop';
+import CategoriesPage from './components/Main/CategoriesPage/CategoriesPage';
 function App() {
 
   return (
@@ -19,6 +20,7 @@ function App() {
           <Routes>
             <Route path='/' element={<MainPage />} />
             <Route path='/post/:id' element={<Post/>} />
+            <Route path='/categories/:category' element={<CategoriesPage/>} />
           </Routes>
         </div>
         <Footer />

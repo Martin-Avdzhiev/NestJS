@@ -21,6 +21,11 @@
     position: relative;
 }
 
+.list-of-categories a{
+    text-decoration: none;
+    color: black;
+}
+
 .name-and-number-of-posts-wrapper {
     display: flex;
     justify-content: space-between;
@@ -33,64 +38,60 @@
 
 /* Environment */
 
-.list-of-categories .name-and-number-of-posts-wrapper:nth-child(1) {
+.list-of-categories a:nth-child(1) .name-and-number-of-posts-wrapper {
     border-left: 3px solid #9b51e0;
 }
 
-.list-of-categories .name-and-number-of-posts-wrapper:nth-child(1) {
-    border-left: 3px solid #9b51e0;
-}
-
-.list-of-categories .name-and-number-of-posts-wrapper:nth-child(1) .category-number-of-posts {
+.list-of-categories a:nth-child(1) .name-and-number-of-posts-wrapper .category-number-of-posts {
     background-color: #9b51e0;
 }
 
 /* Fashion */
 
-.list-of-categories .name-and-number-of-posts-wrapper:nth-child(2) {
+.list-of-categories a:nth-child(2) .name-and-number-of-posts-wrapper {
     border-left: 3px solid #e54e7e;
 }
 
-.list-of-categories .name-and-number-of-posts-wrapper:nth-child(2) .category-number-of-posts {
+.list-of-categories a:nth-child(2) .name-and-number-of-posts-wrapper .category-number-of-posts {
     background-color: #e54e7e;
 }
 
 /* Food */
 
-.list-of-categories .name-and-number-of-posts-wrapper:nth-child(3) {
+.list-of-categories a:nth-child(3) .name-and-number-of-posts-wrapper {
     border-left: 3px solid #61c436;
 }
 
-.list-of-categories .name-and-number-of-posts-wrapper:nth-child(3) .category-number-of-posts {
+.list-of-categories a:nth-child(3) .name-and-number-of-posts-wrapper .category-number-of-posts {
     background-color: #61c436;
 }
 
 /* Lifestyle */
 
-.list-of-categories .name-and-number-of-posts-wrapper:nth-child(4) {
+.list-of-categories a:nth-child(4) .name-and-number-of-posts-wrapper {
     border-left: 3px solid #f4b23f;
 }
 
-.list-of-categories .name-and-number-of-posts-wrapper:nth-child(4) .category-number-of-posts {
+.list-of-categories  a:nth-child(4) .name-and-number-of-posts-wrapper .category-number-of-posts {
     background-color: #f4b23f;
 }
 
 /* Music */
 
-.list-of-categories .name-and-number-of-posts-wrapper:nth-child(5) {
+.list-of-categories a:nth-child(5) .name-and-number-of-posts-wrapper {
     border-left: 3px solid #46c49c;
 }
 
-.list-of-categories .name-and-number-of-posts-wrapper:nth-child(5) .category-number-of-posts {
+.list-of-categories a:nth-child(5) .name-and-number-of-posts-wrapper .category-number-of-posts {
     background-color: #46c49c;
 }
 
 /* Technology */
 
-.list-of-categories .name-and-number-of-posts-wrapper:nth-child(6) {
+.list-of-categories a:nth-child(6) .name-and-number-of-posts-wrapper {
     border-left: 3px solid #607ec7;
 }
 
-.list-of-categories .name-and-number-of-posts-wrapper:nth-child(6) .category-number-of-posts {
+.list-of-categories a:nth-child(6) .name-and-number-of-posts-wrapper .category-number-of-posts {
     background-color: #607ec7;
 }

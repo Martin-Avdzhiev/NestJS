@@ -1,4 +1,4 @@
-import { Categories, New } from "../Types/NewsTypes";
+import { CategoriesLength, New } from "../Types/NewsTypes";
 
 const url = import.meta.env.VITE_API_URL;
 
@@ -28,7 +28,7 @@ export async function getNewsByCategory(category:string){
 
 export async function getNewsCateriesLength(){
         const response = await fetch(`${url}/categories`);
-        const data: Categories = await response.json();
+        const data: CategoriesLength = await response.json();
         return data;
 }
 
