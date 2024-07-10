@@ -37,7 +37,7 @@ export default function CategoriesPage() {
                         category - {category}
                     </h3>
                     <div className="category-page-posts-container">
-                        {news.length > 1 ?
+                        {news.length > 0 ?
                             news.map((x) => (
                                 <div className="category-post-card">
                                     <div className="category-post-img-container"
