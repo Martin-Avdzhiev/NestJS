@@ -39,6 +39,14 @@ export declare class NewsService {
     })[], import("mongoose").Document<unknown, {}, New> & New & {
         _id: import("mongoose").Types.ObjectId;
     }, {}, New, "find", {}>;
+    getNewsCategoriesLength(): Promise<{
+        environment: number;
+        fashion: number;
+        food: number;
+        lifestyle: number;
+        music: number;
+        technology: number;
+    }>;
     getNewById(id: string): import("mongoose").Query<import("mongoose").Document<unknown, {}, New> & New & {
         _id: import("mongoose").Types.ObjectId;
     }, import("mongoose").Document<unknown, {}, New> & New & {

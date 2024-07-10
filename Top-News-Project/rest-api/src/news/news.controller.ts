@@ -17,6 +17,16 @@ export class NewsController {
         }
     }
 
+    @Get("/categories")
+    async getNewsCategoriesLength() {
+        try {
+            const newsCategoriesLength = await this.newsService.getNewsCategoriesLength();
+            return newsCategoriesLength;
+        } catch (error) {
+            return this.newsService.catchError(error);
+        }
+    }
+
     
     
     @Get("/categories/:category")

@@ -18,6 +18,24 @@ export class NewsService {
         return news;
     }
 
+    async getNewsCategoriesLength() {
+        const news = await this.newModel.find();
+        const environment = news.filter((x) => x.category == "environment").length;
+        const fashion = news.filter((x) => x.category == "fashion").length;
+        const food = news.filter((x) => x.category == "food").length;
+        const lifestyle = news.filter((x) => x.category == "lifestyle").length;
+        const music = news.filter((x) => x.category == "music").length;
+        const technology = news.filter((x) => x.category == "technology").length;
+        return {
+            environment,
+            fashion,
+            food,
+            lifestyle,
+            music,
+            technology
+        };
+    }
+
     getNewById(id: string) {
         const oneNew = this.newModel.findById(id);
         if (!oneNew) { throw new HttpException("New is not found", 404) };

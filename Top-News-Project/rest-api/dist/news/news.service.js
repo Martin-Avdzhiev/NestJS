@@ -29,6 +29,23 @@ let NewsService = class NewsService {
         const news = this.newModel.find({ category: category });
         return news;
     }
+    async getNewsCategoriesLength() {
+        const news = await this.newModel.find();
+        const environment = news.filter((x) => x.category == "environment").length;
+        const fashion = news.filter((x) => x.category == "fashion").length;
+        const food = news.filter((x) => x.category == "food").length;
+        const lifestyle = news.filter((x) => x.category == "lifestyle").length;
+        const music = news.filter((x) => x.category == "music").length;
+        const technology = news.filter((x) => x.category == "technology").length;
+        return {
+            environment,
+            fashion,
+            food,
+            lifestyle,
+            music,
+            technology
+        };
+    }
     getNewById(id) {
         const oneNew = this.newModel.findById(id);
         if (!oneNew) {
