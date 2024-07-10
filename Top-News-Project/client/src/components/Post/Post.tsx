@@ -16,7 +16,7 @@ export default function Post() {
                         <MainPost />
                         <div className="side-container-categories">
                             <Categories />
-                            <FeaturedPosts />
+                            <FeaturedPosts limit={3}/>
                         </div>
                     </div>
                     <AlsoLike />
