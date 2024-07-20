@@ -1,6 +1,7 @@
 .main-one-post-container-wrapper {
     display: flex;
     gap: 2em;
+    margin-top: 2em;
 }
 
 .main-one-post-container {
@@ -90,13 +91,15 @@
 
 .one-bottom-posts {
     display: flex;
+    justify-content: center;
+    gap: 1em;
     padding: 1.5em;
     width: 100%;
     background-color: rgb(249, 249, 249);
 }
 
 .one-bottom-posts>div {
-    width: 50%;
+    width: 40%;
 }
 
 .one-bottom-posts>div>div {
@@ -117,7 +120,7 @@
 .one-bottom-posts p {
     font-size: 20px;
     margin: 0 auto;
-    width: 30ch;
+    width: 24ch;
     padding: 1em 0 0 0;
     font-weight: 600;
     margin-bottom: 1em;
@@ -141,15 +144,11 @@
         width: 70%;
     }
 
-    .one-bottom-posts {
-        flex-direction: column;
-        align-items: center;
-    }
-
     .one-bottom-posts>div {
         display: flex;
         flex-direction: column;
         align-items: center;
+        width: 40%;
     }
 
     .one-bottom-posts>div>div {
@@ -187,6 +186,12 @@
     }
 }
 
+@media(max-width: 800px) {
+    .main-one-post-container-wrapper {
+        margin-top: 0;
+    }
+}
+
 @media(max-width: 700px) {
     .main-one-post-container-wrapper {
         gap: 1em;
@@ -206,8 +211,19 @@
     }
 }
 
+@media(max-width: 550px) {
+    .one-bottom-posts {
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+    }
+}
+
 @media(max-width: 500px) {
 
+    .main-one-post-container {
+        margin-bottom: 2em;
+    }
 
     .one-post-text-container {
         padding: 0 0.5em;
@@ -217,7 +233,7 @@
         width: 90%;
     }
 
-    .one-bottom-posts{
+    .one-bottom-posts {
         padding: 0;
     }
 

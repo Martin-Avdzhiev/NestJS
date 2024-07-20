@@ -1,4 +1,6 @@
 .main-second-navigation-div {
+    display: flex;
+    justify-content: center;
     background-color: rgb(252, 252, 252);
     border-top: 2px solid rgb(235, 235, 235);
     border-bottom: 2px solid rgb(235, 235, 235);
@@ -6,8 +8,7 @@
 
 .navigation-buttons {
     display: flex;
-    width: 100%;
-    padding: 0 3em;
+    width: 70%;
 }
 
 .navigation-buttons .second-navigation-ul {
@@ -62,3 +63,14 @@
     background-color: white;
 }
 
+@media(max-width:1400px) {
+    .navigation-buttons {
+        width: 80%;
+    }
+}
+
+@media(max-width:1200px) {
+    .navigation-buttons {
+        width: 90%;
+    }
+}

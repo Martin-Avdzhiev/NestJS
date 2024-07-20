@@ -1,10 +1,9 @@
 .category-page-container-wrapper{
     display: flex;
     justify-content: center;
-    width: 100%;
-    padding: 0 3em;
+    width: 70%;
     gap: 2em;
-    margin-top: 2em;
+    margin: 2em auto 0 auto;
 }
 
 .category-page-container{
