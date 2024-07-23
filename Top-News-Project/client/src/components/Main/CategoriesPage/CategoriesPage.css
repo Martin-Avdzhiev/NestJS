@@ -13,8 +13,11 @@
 .category-page-posts-container{
     display: flex;
     flex-direction: column;
-    gap: 1.5em;
     width: 100%;
+    gap: 1.5em;
+    padding: 1.5em;
+    background-color: rgb(249,249,249);
+    border: 1px solid rgb(232, 232, 232);
 }
 
 .category-page-container > h3{
@@ -27,12 +30,12 @@
 
 .category-post-card{
     display: flex;
+    border: 1px solid rgb(236, 236, 236)
 }
 
 .category-post-img-container{
     display: flex;
     justify-content: center;
-    align-items: center;
     overflow: hidden;
     max-width: 45%;
     min-width: 45%;
@@ -65,3 +68,101 @@
     margin: 0;
 }
 
+@media(max-width:1400px) {
+    .category-page-container-wrapper {
+        width: 80%;
+    }
+}
+
+@media(max-width:1200px) {
+    .category-page-container-wrapper {
+        width: 90%;
+    }
+    .category-page-posts-container{
+        gap: 1em;
+        padding: 1em;
+    }
+
+    .category-post-img-container{
+        max-width: 60%;
+    }
+
+    .category-post-info{
+        width: 40%;
+    }
+
+    .category-post-info h2{
+        width: 80%;
+        font-size: 20px;
+    }
+}
+
+@media(max-width:1023px) {
+    .category-page-container-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .category-page-container{
+        width: 100%;
+    }
+    .category-post-info{
+        width: 100%;
+    }
+    .category-post-info h2{
+        font-size: 24px;
+    }
+}
+
+@media(max-width:900px) {
+
+    .category-post-info h2{
+        width: 95%;
+        font-size: 22px;
+    }
+    .category-post-img-container{
+        height: 14em;
+    }
+}
+@media(max-width:750px) {
+
+    .category-post-info h2{
+        font-size: 20px;
+    }
+    .category-post-img-container{
+        height: 12em;
+    }
+}
+
+@media(max-width:669px) {
+
+    .category-post-card{
+        flex-direction: column;
+        align-items: center;
+        gap: 1em;
+    }
+    .category-post-img-container{
+        height: auto;
+        max-width: 100%;
+    }
+
+
+    .category-post-info{
+        display: flex;
+        align-items: center;
+    }
+    .category-post-info h2 {
+        text-align: center;
+    }
+}
+
+@media(max-width:500px){
+    .category-page-container{
+        margin-bottom: 2em;
+    }
+}
+@media(max-width:400px){
+    .category-post-info h2 {
+       font-size: 16px;
+    }
+}
