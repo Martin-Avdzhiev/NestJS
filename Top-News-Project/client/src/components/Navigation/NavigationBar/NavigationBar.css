@@ -4,8 +4,9 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 15vw;
+    width: 250px;
     background-color: white;
+    z-index: 1;
 }
 
 .navigation-bar-link {
@@ -32,4 +33,17 @@
     width: 10%;
     text-align: center;
     font-size: 12px;
+}
+
+.navigation-bar-search{
+    padding: 1em 0;
+}
+
+.navigation-bar-search input{
+    width: calc(100% - 2em);
+    border-radius: 8%;
+    border: none;
+    background-color: rgb(232,231,231);
+    padding: 0.3em;
+    font-size: 18px;
 }

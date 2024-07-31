@@ -14,6 +14,9 @@ export default function NavigationBar() {
                 <NavigationLink name="Features"/>
                 <NavigationLink name="Contact"/>
                 <NavigationLink name="More"/>
+                <div className="navigation-bar-search">
+                    <input type="text" placeholder="Type here to search..." />
+                </div>
             </div>
         </>
     )

@@ -25,22 +25,31 @@ export default function Navigation() {
 
     return (
         <>
-            <div className="main-navigation-div-wrapper">
+            <div className="main-navigation-div-wrapper"
+               style={{
+                // left: showNavigationForMobile ? '250px' : '0',
+                marginLeft: showNavigationForMobile ? '260px' : '0'
+              }}
+            >
                 {showNavigationForMobile ? <NavigationBar /> : null}
                 {isUnder1023Width ?
-                    <div className="main-image-wrapper">
+                    <div className="main-image-wrapper"
+                        style={{
+                            margin: showNavigationForMobile ? "2.1357em 0" : "1em auto"
+                        }}
+                    >
                         <span
                             onClick={() => setShowNavigationForMobile(!showNavigationForMobile)}
-                            className="navigation-button-bars"
-                            style={{ 
-                                position: 'absolute', 
-                                left: showNavigationForMobile ? '15vw' : '0'
-                              }}
-                            >
-                            <FontAwesomeIcon icon={['fas', 'bars']} />
+                            className="navigation-button-bars">
+                            <FontAwesomeIcon icon={['fas', 'bars']} 
+                            />
                         </span>
                         <div className="main-image">
-                            <img src={Logo} alt="voice-logo" onClick={navigateToMainPage} />
+                            <img src={Logo} alt="voice-logo" onClick={navigateToMainPage} 
+                            style={{
+                                display: showNavigationForMobile ? "none" : "flex"
+                            }}
+                            />
                         </div>
                     </div> :
                     <>
