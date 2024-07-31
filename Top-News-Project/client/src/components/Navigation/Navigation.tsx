@@ -4,12 +4,18 @@ import { useMediaQuery } from 'react-responsive';
 
 import { useNavigate } from "react-router-dom";
 
-import "./Navigation.css";
+import { useState } from "react";
 
 import Logo from "../../../Images/voice_logo.png";
 
+import NavigationBar from "./NavigationBar/NavigationBar";
+
+import "./Navigation.css";
+
 
 export default function Navigation() {
+    const [showNavigationForMobile, setShowNavigationForMobile] = useState(false);
+
     const navigate = useNavigate();
     const navigateToMainPage = () => {
         navigate("/");
@@ -20,10 +26,19 @@ export default function Navigation() {
     return (
         <>
             <div className="main-navigation-div-wrapper">
-
+                {showNavigationForMobile ? <NavigationBar /> : null}
                 {isUnder1023Width ?
                     <div className="main-image-wrapper">
-                        <span className="navigation-button-bars"><FontAwesomeIcon icon={['fas', 'bars']} /></span>
+                        <span
+                            onClick={() => setShowNavigationForMobile(!showNavigationForMobile)}
+                            className="navigation-button-bars"
+                            style={{ 
+                                position: 'absolute', 
+                                left: showNavigationForMobile ? '15vw' : '0'
+                              }}
+                            >
+                            <FontAwesomeIcon icon={['fas', 'bars']} />
+                        </span>
                         <div className="main-image">
                             <img src={Logo} alt="voice-logo" onClick={navigateToMainPage} />
                         </div>

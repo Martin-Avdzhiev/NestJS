@@ -1,13 +1,18 @@
-import './App.css';
-import Footer from './components/Footer/Footer';
+import { Routes, Route } from 'react-router-dom';
+
+import ScrollToTop from './components/scrollToTop';
+
 import Navigation from './components/Navigation/Navigation';
 import SecondNavigation from './components/SecondNavigation/SecondNavigation';
+
 import MainPage from './components/Main/MainPage/MainPage';
 import Post from './components/Post/Post';
-
-import { Routes, Route } from 'react-router-dom'
-import ScrollToTop from './components/scrollToTop';
 import CategoriesPage from './components/Main/CategoriesPage/CategoriesPage';
+
+import Footer from './components/Footer/Footer';
+
+import './App.css';
+
 function App() {
 
   return (
