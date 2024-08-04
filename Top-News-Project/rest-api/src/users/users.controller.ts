@@ -2,7 +2,7 @@ import { Body, Controller, Delete, Get, Param, Post, Put, UsePipes, ValidationPi
 import { UsersService } from "./users.service";
 import { UserDto } from "./dtos/User.dto";
 
-@Controller("news")
+@Controller("users")
 export class UsersController {
     constructor(private usersService: UsersService) { }
 

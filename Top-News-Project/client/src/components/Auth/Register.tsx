@@ -1,4 +1,5 @@
 import { useForm } from "../../hooks/useForm";
+import { createUser } from "../../services/userService";
 import "./Auth.css";
 
 interface data {
@@ -12,6 +13,7 @@ export default function Register() {
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+        createUser(formData);
         resetForm();
     };
 
