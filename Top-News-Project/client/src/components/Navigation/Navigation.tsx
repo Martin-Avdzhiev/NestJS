@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { useMediaQuery } from 'react-responsive';
 
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 import { useState } from "react";
 
@@ -27,7 +27,6 @@ export default function Navigation() {
         <>
             <div className="main-navigation-div-wrapper"
                style={{
-                // left: showNavigationForMobile ? '250px' : '0',
                 marginLeft: showNavigationForMobile ? '260px' : '0'
               }}
             >
@@ -64,6 +63,8 @@ export default function Navigation() {
                                 </ul>
                             </div>
                             <div className="socials">
+                                    <Link to={"/login"}>Login</Link>
+                                    <Link to={"/register"}>Register</Link>
                                 <FontAwesomeIcon icon={['fab', 'facebook-f']} />
                                 <FontAwesomeIcon icon={['fab', 'twitter']} />
                                 <FontAwesomeIcon icon={['fab', 'google-plus-g']} />

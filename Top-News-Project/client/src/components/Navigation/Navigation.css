@@ -37,6 +37,12 @@
 
 .main-navigation-div .socials>*{
     cursor: pointer;
+    color: white;
+    text-decoration: none;
+}
+
+.main-navigation-div .socials>a:hover{
+    text-decoration: underline;
 }
 
 .main-image-wrapper{
