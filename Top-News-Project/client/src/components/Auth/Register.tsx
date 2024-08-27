@@ -1,6 +1,9 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 import { useForm } from "../../hooks/useForm";
 import { createUser } from "../../services/userService";
+
 import "./Auth.css";
 
 interface data {
@@ -11,17 +14,18 @@ interface data {
 }
 export default function Register() {
 
+    const navigate = useNavigate();
     const [isError, setIsError] = useState("");
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        createUser(formData).then((user) => {
+        createUser(formData).then(() => {
                 setIsError("");
+                resetForm();
+                navigate("/login");
         }).catch((error) => {
             setIsError(error)
-
         });
-        // resetForm();
     };
 
     const { formData, handleChange, resetForm }
