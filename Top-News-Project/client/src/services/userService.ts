@@ -2,6 +2,8 @@ import { User } from "../Types/User";
 
 const url = import.meta.env.VITE_API_URL;
 
+
+
 export async function createUser(data:User){
     const response = await fetch(`${url}/users/create`,{
         method: 'POST',
@@ -13,3 +15,4 @@ export async function createUser(data:User){
     const user: User = await response.json();
     return user;
 }
+
