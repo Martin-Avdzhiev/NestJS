@@ -21,13 +21,28 @@ let UsersService = class UsersService {
     constructor(userModel) {
         this.userModel = userModel;
     }
-    getUsers() {
-        const users = this.userModel.find();
+    async getUsers() {
+        const users = await this.userModel.find();
         return users;
     }
-    getUserById(id) {
-        const user = this.userModel.findById(id);
+    async getUserById(id) {
+        const user = await this.userModel.findById(id);
         return user;
+    }
+    async LoginUser(username, password) {
+        try {
+            const user = await this.userModel.findOne({ username, password });
+            return user;
+        }
+        catch (error) {
+            if (error.name == "MongoServerError") {
+                if (error.code == 11000) {
+                    const duplicateValue = Object.keys(error.keyValue)[0];
+                    throw ({ message: "duplicate", duplicateValue });
+                }
+            }
+            throw error;
+        }
     }
     async createUser(UserDto) {
         try {

@@ -2,21 +2,37 @@ import { HttpException, Injectable } from "@nestjs/common";
 import { InjectModel } from "@nestjs/mongoose";
 import { Error, Model, MongooseError } from "mongoose";
 import { User } from "src/models/User";
-import { UserDto } from "./dtos/User.dto";
+import { LoginUserDto, UserDto } from "./dtos/User.dto";
 import { validateCreateUser } from "src/validation/userModelValidation";
 
 @Injectable()
 export class UsersService {
     constructor(@InjectModel(User.name) private userModel: Model<User>) { }
 
-    getUsers() {
-        const users = this.userModel.find();
+    async getUsers() {
+        const users = await this.userModel.find();
         return users;
     }
 
-    getUserById(id:string) {
-        const user = this.userModel.findById(id);
+   async  getUserById(id:string) {
+        const user = await this.userModel.findById(id);
         return user;
+    }
+
+   async LoginUser(username:string, password:string) {
+        try {  
+            const user = await this.userModel.findOne({username,password});
+            return user
+        } 
+        catch (error) {
+            if(error.name == "MongoServerError"){
+                if(error.code == 11000){
+                    const duplicateValue = Object.keys(error.keyValue)[0];
+                    throw ({message : "duplicate", duplicateValue});
+                }
+            }
+            throw error
+        }
     }
 
    async createUser(UserDto: UserDto) {

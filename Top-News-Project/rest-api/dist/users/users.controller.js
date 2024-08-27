@@ -38,6 +38,24 @@ let UsersController = class UsersController {
             return this.usersService.catchError(error);
         }
     }
+    async loginUser(username, password) {
+        try {
+            const user = await this.usersService.LoginUser(username, password);
+            return user;
+        }
+        catch (error) {
+            if (error.message == "duplicate") {
+                const duplicatedValue = error.duplicateValue;
+                const responseError = {
+                    message: [`This ${duplicatedValue} already exist!`],
+                    error: "duplicate",
+                    statusCode: 400
+                };
+                throw responseError;
+            }
+            return this.usersService.catchError(error);
+        }
+    }
     async createUser(UserDto) {
         try {
             const newUser = await this.usersService.createUser(UserDto);
@@ -89,6 +107,15 @@ __decorate([
     __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", Promise)
 ], UsersController.prototype, "getUserById", null);
+__decorate([
+    (0, common_1.Post)("/login"),
+    (0, common_1.UsePipes)(new common_1.ValidationPipe()),
+    __param(0, (0, common_1.Body)("username")),
+    __param(1, (0, common_1.Body)("password")),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String, String]),
+    __metadata("design:returntype", Promise)
+], UsersController.prototype, "loginUser", null);
 __decorate([
     (0, common_1.Post)("/create"),
     (0, common_1.UsePipes)(new common_1.ValidationPipe()),

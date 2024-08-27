@@ -29,16 +29,15 @@ import { UserDto } from "./dtos/User.dto";
 export declare class UsersService {
     private userModel;
     constructor(userModel: Model<User>);
-    getUsers(): import("mongoose").Query<(import("mongoose").Document<unknown, {}, User> & User & {
+    getUsers(): Promise<(import("mongoose").Document<unknown, {}, User> & User & {
         _id: import("mongoose").Types.ObjectId;
-    })[], import("mongoose").Document<unknown, {}, User> & User & {
+    })[]>;
+    getUserById(id: string): Promise<import("mongoose").Document<unknown, {}, User> & User & {
         _id: import("mongoose").Types.ObjectId;
-    }, {}, User, "find", {}>;
-    getUserById(id: string): import("mongoose").Query<import("mongoose").Document<unknown, {}, User> & User & {
+    }>;
+    LoginUser(username: string, password: string): Promise<import("mongoose").Document<unknown, {}, User> & User & {
         _id: import("mongoose").Types.ObjectId;
-    }, import("mongoose").Document<unknown, {}, User> & User & {
-        _id: import("mongoose").Types.ObjectId;
-    }, {}, User, "findOne", {}>;
+    }>;
     createUser(UserDto: UserDto): Promise<import("mongoose").Document<unknown, {}, User> & User & {
         _id: import("mongoose").Types.ObjectId;
     }>;
