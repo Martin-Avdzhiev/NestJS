@@ -3,3 +3,9 @@ export type User = {
     username:string;
     password:string;
 }
+
+export type UserError = {
+    message: string[],
+    error: string;
+    statusCode: number;
+}

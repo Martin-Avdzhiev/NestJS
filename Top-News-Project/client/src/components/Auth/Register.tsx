@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useForm } from "../../hooks/useForm";
 import { createUser } from "../../services/userService";
 import "./Auth.css";
@@ -10,11 +11,17 @@ interface data {
 }
 export default function Register() {
 
+    const [isError, setIsError] = useState("");
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        createUser(formData);
-        resetForm();
+        createUser(formData).then((user) => {
+                setIsError("");
+        }).catch((error) => {
+            setIsError(error)
+
+        });
+        // resetForm();
     };
 
     const { formData, handleChange, resetForm }
@@ -34,6 +41,9 @@ export default function Register() {
                         onChange={handleChange} />
                 </div>
                 <button type="submit">Register</button>
+                {isError ? (
+                    <p>{isError}</p>
+                ) : null}
             </form>
         </>
     )

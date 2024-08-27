@@ -31,11 +31,16 @@ export class UsersController {
     async createUser(@Body() UserDto: UserDto) {
         try {
             const newUser = await this.usersService.createUser(UserDto);
-            return `You created ${newUser.username}`;
+            return newUser;
         } catch (error) {
-            if(error.message == "duplicate"){
-                const duplicatedValue = error.duplicateValue
-                return `This ${duplicatedValue} already exist!`;
+            if (error.message == "duplicate") {
+                const duplicatedValue = error.duplicateValue;
+                const responseError = {
+                    message: [`This ${duplicatedValue} already exist!`],
+                    error: "duplicate",
+                    statusCode: 400
+                }
+                throw responseError;
             }
             return this.usersService.catchError(error);
         }
