@@ -15,18 +15,18 @@ class UserDto {
 }
 exports.UserDto = UserDto;
 __decorate([
-    (0, class_validator_1.IsNotEmpty)(),
-    (0, class_validator_1.IsString)(),
+    (0, class_validator_1.IsNotEmpty)({ message: "Email is required!" }),
+    (0, class_validator_1.IsEmail)({}, { message: "Please enter a valid email!" }),
     __metadata("design:type", String)
 ], UserDto.prototype, "email", void 0);
 __decorate([
-    (0, class_validator_1.IsNotEmpty)(),
-    (0, class_validator_1.IsString)(),
+    (0, class_validator_1.IsNotEmpty)({ message: "Username is required!" }),
+    (0, class_validator_1.IsString)({ message: "Please enter a valid username!" }),
     __metadata("design:type", String)
 ], UserDto.prototype, "username", void 0);
 __decorate([
-    (0, class_validator_1.IsNotEmpty)(),
-    (0, class_validator_1.IsString)(),
+    (0, class_validator_1.IsNotEmpty)({ message: "Password is required!" }),
+    (0, class_validator_1.IsString)({ message: "Please enter a valid password!" }),
     __metadata("design:type", String)
 ], UserDto.prototype, "password", void 0);
 //# sourceMappingURL=User.dto.js.map

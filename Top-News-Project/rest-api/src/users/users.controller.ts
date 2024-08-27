@@ -33,6 +33,10 @@ export class UsersController {
             const newUser = await this.usersService.createUser(UserDto);
             return `You created ${newUser.username}`;
         } catch (error) {
+            if(error.message == "duplicate"){
+                const duplicatedValue = error.duplicateValue
+                return `This ${duplicatedValue} already exist!`;
+            }
             return this.usersService.catchError(error);
         }
     }

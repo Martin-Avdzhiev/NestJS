@@ -29,9 +29,20 @@ let UsersService = class UsersService {
         const user = this.userModel.findById(id);
         return user;
     }
-    createUser(UserDto) {
-        const createdUser = new this.userModel(UserDto).save();
-        return createdUser;
+    async createUser(UserDto) {
+        try {
+            const createdDocument = new this.userModel(UserDto);
+            return await createdDocument.save();
+        }
+        catch (error) {
+            if (error.name == "MongoServerError") {
+                if (error.code == 11000) {
+                    const duplicateValue = Object.keys(error.keyValue)[0];
+                    throw ({ message: "duplicate", duplicateValue });
+                }
+            }
+            throw error;
+        }
     }
     async editUser(id, data) {
         const editedUser = (await this.userModel.findByIdAndUpdate(id, data, { returnDocument: "after" })).save();

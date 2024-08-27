@@ -44,6 +44,10 @@ let UsersController = class UsersController {
             return `You created ${newUser.username}`;
         }
         catch (error) {
+            if (error.message == "duplicate") {
+                const duplicatedValue = error.duplicateValue;
+                return `This ${duplicatedValue} already exist!`;
+            }
             return this.usersService.catchError(error);
         }
     }

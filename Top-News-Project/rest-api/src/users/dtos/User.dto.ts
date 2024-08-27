@@ -1,15 +1,15 @@
-import { IsNotEmpty, IsString } from "class-validator";
+import { IsEmail, IsNotEmpty, IsString } from "class-validator";
 
 export class UserDto {
-    @IsNotEmpty()
-    @IsString()
+    @IsNotEmpty({ message: "Email is required!" })
+    @IsEmail({}, { message: "Please enter a valid email!" })
     email: string;
 
-    @IsNotEmpty()
-    @IsString()
+    @IsNotEmpty({ message: "Username is required!" })
+    @IsString({ message: "Please enter a valid username!" })
     username: string;
 
-    @IsNotEmpty()
-    @IsString()
+    @IsNotEmpty({ message: "Password is required!" })
+    @IsString({ message: "Please enter a valid password!" })
     password: string;
 }

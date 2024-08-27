@@ -25,6 +25,7 @@
 /// <reference types="mongoose/types/inferschematype" />
 /// <reference types="mongoose/types/inferrawdoctype" />
 export declare class User {
+    email: string;
     username: string;
     password: string;
 }
